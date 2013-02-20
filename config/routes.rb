@@ -1,4 +1,10 @@
 Lacasona::Application.routes.draw do
+  resources :property_types
+
+
+  resources :properties
+
+
   resources :pages, except: :show
   get ':id', to: 'pages#show', as: :page  
   put ':id', to: 'pages#update', as: :page

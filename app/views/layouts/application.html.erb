@@ -10,6 +10,7 @@
 	<div id="container">
 		<div id="nav">
 			<%= link_to_unless_current "Home", home_path%>
+			<%= link_to_unless_current "Propiedades", properties_path%>
 			<% Page.where(:visible => true).each do |page|%>
 				<%= link_to_unless_current page.name, page_path(page.permalink)%>
 			<% end %>
