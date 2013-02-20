@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lacasona</title>
+  <title>La casona</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div id="container">
+		<div id="nav">
+			<%= link_to_unless_current "Home", home_path%>
+			<%= link_to_unless_current "Acerca de nosotros", page_path("about")%>
+		</div>
+		<%= yield %>
+	</div>
 </body>
 </html>

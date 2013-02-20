@@ -1,4 +1,9 @@
 Lacasona::Application.routes.draw do
+  resources :pages, except: :show
+  get ':id', to: 'pages#show', as: :page
+
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,7 +54,7 @@ Lacasona::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-
+  root to: 'home#index', as: 'home'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
