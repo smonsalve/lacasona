@@ -10,7 +10,11 @@
 	<div id="container">
 		<div id="nav">
 			<%= link_to_unless_current "Home", home_path%>
-			<%= link_to_unless_current "Acerca de nosotros", page_path("about")%>
+			<% Page.all.each do |page|%>
+				<%= link_to_unless_current page.name, page_path(page.permalink)%>
+			<% end %>
+			
+			
 		</div>
 		<%= yield %>
 	</div>

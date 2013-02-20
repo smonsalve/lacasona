@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Pages.delete_all
+Pages.create(content: 'Estamos ubicados en ... blabla bla', name: 'Acerca de nosotros', permalink: 'about')
+Pages.create(content: 'El Horario de atencion es ... blabla bla', name: 'Horarios', permalink: 'schedule')
