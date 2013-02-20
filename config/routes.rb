@@ -1,7 +1,9 @@
 Lacasona::Application.routes.draw do
   resources :pages, except: :show
-  get ':id', to: 'pages#show', as: :page
-
+  get ':id', to: 'pages#show', as: :page  
+  put ':id', to: 'pages#update', as: :page
+  delete ':id', to: 'pages#destroy', as: :page
+  
   get "home/index"
 
   # The priority is based upon order of creation:
