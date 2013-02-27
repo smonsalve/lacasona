@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220160919) do
+ActiveRecord::Schema.define(:version => 20130220185605) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,31 @@ ActiveRecord::Schema.define(:version => 20130220160919) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "visible"
   end
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
+
+  create_table "properties", :force => true do |t|
+    t.integer  "code"
+    t.integer  "owner_id"
+    t.integer  "stratum"
+    t.decimal  "market_value"
+    t.decimal  "rental_fee"
+    t.string   "address"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.string   "phone"
+    t.decimal  "appraisal"
+    t.integer  "property_type_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "property_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
