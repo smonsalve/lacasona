@@ -1,0 +1,25 @@
+<h1>Listing tax_regimes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tax percentage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tax_regimes.each do |tax_regime| %>
+  <tr>
+    <td><%= tax_regime.name %></td>
+    <td><%= tax_regime.tax_percentage %></td>
+    <td><%= link_to 'Show', tax_regime %></td>
+    <td><%= link_to 'Edit', edit_tax_regime_path(tax_regime) %></td>
+    <td><%= link_to 'Destroy', tax_regime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tax regime', new_tax_regime_path %>

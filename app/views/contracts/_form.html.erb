@@ -1,0 +1,49 @@
+<%= form_for(@contract) do |f| %>
+  <% if @contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% @contract.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.number_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :property_id %><br />
+    <%= f.number_field :property_id %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :lessee_id %><br />
+    <%= f.number_field :lessee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :initial_date %><br />
+    <%= f.date_select :initial_date %>
+  </div>
+  <div class="field">
+    <%= f.label :final_date %><br />
+    <%= f.date_select :final_date %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_day %><br />
+    <%= f.number_field :pay_day %>
+  </div>
+  <div class="field">
+    <%= f.label :rate_commission %><br />
+    <%= f.text_field :rate_commission %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,22 @@
 Lacasona::Application.routes.draw do
+  resources :property_facilities
+
+
+  resources :facilities
+
+
+  resources :legal_natures
+
+
+  resources :tax_regimes
+
+
+  resources :people
+
+
+  resources :contracts
+
+
   resources :property_types
 
 

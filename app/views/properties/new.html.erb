@@ -1,5 +1,75 @@
 <h1>New property</h1>
+<%= form_tag new_property_path, :method => 'get' do %>	
+	
 
-<%= render 'form' %>
+
+  <div class="field">
+    <%= label_tag :code %><br />
+    <%= number_field_tag :code %>
+  </div>
+  <div class="field">
+    <%= label_tag :owner_id %><br />
+    <%= number_field_tag :owner_id %>
+  </div>
+  <div class="field">
+    <%= label_tag :stratum %><br />
+    <%= number_field_tag :stratum %>
+  </div>
+  <div class="field">
+    <%= label_tag :market_value %><br />
+    <%= text_field_tag :market_value %>
+  </div>
+  <div class="field">
+    <%= label_tag :rental_fee %><br />
+    <%= text_field_tag :rental_fee %>
+  </div>
+  <div class="field">
+    <%= label_tag :address %><br />
+    <%= text_field_tag :address %>
+  </div>
+  <div class="field">
+    <%= label_tag :neighborhood %><br />
+    <%= text_field_tag :neighborhood %>
+  </div>
+  <div class="field">
+    <%= label_tag :city %><br />
+    <%= text_field_tag :city %>
+  </div>
+  <div class="field">
+    <%= label_tag :phone %><br />
+    <%= text_field_tag :phone,nil, :prefix => 'property' %>
+  </div>
+  <div class="field">
+    <%= label_tag :appraisal %><br />
+    <%= text_field_tag :appraisal %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :property_type_id %><br />
+	
+	<%= select_tag "property_type_id", options_from_collection_for_select(PropertyType.all, "id", "name")%>
+
+  </div>
+
+
+
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+			<% Facility.all.each do |facility|%>
+				<tr>
+					<td> <%= check_box_tag "facility_ids[]", facility.id%></td>
+					<td> <%=  facility.name%></td>
+					<td> <%= number_field_tag 'quantity', nil, :in => 1..12%></td>
+				</tr>
+			<% end %>
+	</table>
+	
+	<%= submit_tag "Crear" %>
+	
+<% end%>
 
 <%= link_to 'Back', properties_path %>
