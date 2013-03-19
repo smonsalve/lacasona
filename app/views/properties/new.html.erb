@@ -1,5 +1,5 @@
 <h1>New property</h1>
-<%= form_tag new_property_path, :method => 'get' do %>	
+<%= form_tag properties_path, :method => 'get' do %>	
 	
 
 
@@ -46,7 +46,6 @@
 
   <div class="field">
     <%= label_tag :property_type_id %><br />
-	
 	<%= select_tag "property_type_id", options_from_collection_for_select(PropertyType.all, "id", "name")%>
 
   </div>
@@ -62,7 +61,7 @@
 			<% Facility.all.each do |facility|%>
 				<tr>
 					<td> <%= check_box_tag "facility_ids[]", facility.id%></td>
-					<td> <%=  facility.name%></td>
+					<td> <%= facility.name%></td>
 					<td> <%= number_field_tag 'quantity', nil, :in => 1..12%></td>
 				</tr>
 			<% end %>
