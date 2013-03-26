@@ -1,2 +1,3 @@
 class Owner < Person
 end
+
