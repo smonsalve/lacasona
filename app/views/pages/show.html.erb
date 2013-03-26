@@ -1,4 +1,4 @@
 <h1><%= @page.name %></h1>
 
 
-<%= simple_format @page.content %>
+<%= simple_format @page.content.html_safe %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  card_id_number: MyString
+  name: MyString
+  address: MyString
+  email: MyString
+  phone: MyString
+  cellphone: MyString
+  tax_regime_id: 1
+  legal_nature_id: 1
+
+two:
+  card_id_number: MyString
+  name: MyString
+  address: MyString
+  email: MyString
+  phone: MyString
+  cellphone: MyString
+  tax_regime_id: 1
+  legal_nature_id: 1

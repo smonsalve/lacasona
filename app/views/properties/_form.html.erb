@@ -16,8 +16,8 @@
     <%= f.number_field :code %>
   </div>
   <div class="field">
-    <%= f.label :owner_id %><br />
-    <%= f.number_field :owner_id %>
+    <%= f.label :owner_name %><br />
+    <%= f.text_field :owner_name, data: {autocomplete_source: people_path} %>
   </div>
   <div class="field">
     <%= f.label :stratum %><br />

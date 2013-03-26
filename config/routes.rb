@@ -1,4 +1,35 @@
 Lacasona::Application.routes.draw do
+  get "transaction/month_end"
+
+  get "transaction/billing"
+
+  resources :payments
+
+
+  resources :balance_movements
+
+
+  resources :invoices
+
+
+  resources :property_facilities
+
+
+  resources :facilities
+
+
+  resources :legal_natures
+
+
+  resources :tax_regimes
+
+
+  resources :people
+
+
+  resources :contracts
+
+
   resources :property_types
 
 
