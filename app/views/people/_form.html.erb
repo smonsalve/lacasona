@@ -37,7 +37,8 @@
   </div>
   <div class="field">
     <%= f.label :tax_regime_id %><br />
-    <%= f.number_field :tax_regime_id %>
+	<%= f.select( :tax_regime_id,  TaxRegime.all.map {|u| [u.name,u.id]}, {:include_blank => false}) %>
+
   </div>
   <div class="field">
     <%= f.label :legal_nature_id %><br />

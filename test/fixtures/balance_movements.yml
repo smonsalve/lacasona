@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 9.99
+  document_id: 1
+  document_type_id: 1
+  movement_date: 2013-03-25
+
+two:
+  value: 9.99
+  document_id: 1
+  document_type_id: 1
+  movement_date: 2013-03-25

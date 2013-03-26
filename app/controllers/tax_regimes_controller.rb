@@ -2,12 +2,19 @@ class TaxRegimesController < ApplicationController
   # GET /tax_regimes
   # GET /tax_regimes.json
   def index
-    @tax_regimes = TaxRegime.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tax_regimes }
+    # if params[:term]
+    #    @tax_regimes = TaxRegime.order(:name).where("name like ?", "%#{params[:term]}%")
+    #    render json: @tax_regimes.map(&:name)
+    # else
+      @tax_regimes = TaxRegime.all  
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @tax_regimes }
+      # end
     end
+    
+
+
   end
 
   # GET /tax_regimes/1

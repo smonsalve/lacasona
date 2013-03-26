@@ -24,3 +24,22 @@ PropertyType.create(name: 'Lote')
 PropertyType.create(name: 'Oficina')
 PropertyType.create(name: 'Parcelacion')
 
+Facility.delete_all
+Facility.create(name: 'Habitacion')
+Facility.create(name: 'Banio')
+Facility.create(name: 'Balcon')
+Facility.create(name: 'Cocina')
+Facility.create(name: 'Sala')
+Facility.create(name: 'Comedor')
+Facility.create(name: 'Sala-Comedor')
+Facility.create(name: 'Red de gas')
+
+LegalNature.delete_all
+LegalNature.create(name: "Natural")
+LegalNature.create(name: "Juridico")
+
+TaxRegime.delete_all
+TaxRegime.create(name: "Comun", tax_percentage: 0.16)
+TaxRegime.create(name: "Simplificado", tax_percentage: 0.0)
+
+

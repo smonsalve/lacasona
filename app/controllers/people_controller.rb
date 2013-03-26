@@ -2,12 +2,18 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    if params[:term]
+       @people = Person.order(:name).where("name like ?", "%#{params[:term]}%")
+       render json: @people.map(&:name)
+    else
+      @people = Person.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @people }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @people }
+      end
     end
+
   end
 
   # GET /people/1

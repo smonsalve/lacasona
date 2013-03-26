@@ -1,4 +1,13 @@
 Lacasona::Application.routes.draw do
+  resources :payments
+
+
+  resources :balance_movements
+
+
+  resources :invoices
+
+
   resources :property_facilities
 
 
