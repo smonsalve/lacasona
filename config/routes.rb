@@ -1,4 +1,8 @@
 Lacasona::Application.routes.draw do
+  get "transaction/month_end"
+
+  get "transaction/billing"
+
   resources :payments
 
 
