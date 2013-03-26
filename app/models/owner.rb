@@ -1,3 +1,0 @@
-class Owner < Person
-end
-
