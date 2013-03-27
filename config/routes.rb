@@ -27,6 +27,9 @@ Lacasona::Application.routes.draw do
   resources :people
 
 
+  resources :owners
+ 
+
   resources :contracts
 
 

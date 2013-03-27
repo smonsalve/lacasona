@@ -3,13 +3,13 @@ class Property < ActiveRecord::Base
   has_many :contracts
   has_many :property_facilities
   has_many :facilities, :through => :property_facilities
-  belongs_to :person
+  belongs_to :owner
   
   def owner_name
     person.try(:name)
   end
   
   def owner_name=(name)
-    self.person = Person.find_by_name(name) if name.present?
+    self.person = Owner.find_by_name(name) if name.present?
   end
 end
