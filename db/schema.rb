@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326184212) do
+ActiveRecord::Schema.define(:version => 20130327015606) do
 
   create_table "balance_movements", :force => true do |t|
     t.decimal  "value"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130326184212) do
     t.integer  "legal_nature_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "type"
   end
 
   create_table "properties", :force => true do |t|

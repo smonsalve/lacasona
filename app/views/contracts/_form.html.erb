@@ -20,13 +20,14 @@
     <%= f.number_field :property_id %>
   </div>
   <div class="field">
-    <%= f.label :owner_id %><br />
-    <%= f.number_field :owner_id %>
+    <%= f.label :owner_name %><br />
+    <%= f.text_field :owner_name, data: {autocomplete_source: owners_path} %>
   </div>
   <div class="field">
-    <%= f.label :lessee_id %><br />
-    <%= f.number_field :lessee_id %>
+    <%= f.label :lessee_name %><br />
+    <%= f.text_field :lessee_name, data: {autocomplete_source: lessees_path} %>
   </div>
+
   <div class="field">
     <%= f.label :initial_date %><br />
     <%= f.date_select :initial_date %>
