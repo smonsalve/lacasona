@@ -30,6 +30,9 @@ Lacasona::Application.routes.draw do
   resources :owners
  
 
+  resources :lessees
+ 
+
   resources :contracts
 
 

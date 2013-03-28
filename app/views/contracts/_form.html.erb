@@ -24,9 +24,10 @@
     <%= f.text_field :owner_name, data: {autocomplete_source: owners_path} %>
   </div>
   <div class="field">
-    <%= f.label :lessee_id %><br />
-    <%= f.number_field :lessee_id %>
+    <%= f.label :lessee_name %><br />
+    <%= f.text_field :lessee_name, data: {autocomplete_source: lessees_path} %>
   </div>
+
   <div class="field">
     <%= f.label :initial_date %><br />
     <%= f.date_select :initial_date %>

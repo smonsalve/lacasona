@@ -4,3 +4,6 @@
 jQuery ->
 	$('#contract_owner_name').autocomplete
 	 source: $('#contract_owner_name').data('autocomplete-source')
+ 	$('#contract_lessee_name').autocomplete
+ 	 source: $('#contract_lessee_name').data('autocomplete-source')
+	 

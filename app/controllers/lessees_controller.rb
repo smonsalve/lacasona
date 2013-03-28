@@ -1,4 +1,4 @@
-class PeopleController < ApplicationController
+class LesseesController < ApplicationController
   # GET /people
   # GET /people.json
   def index
@@ -46,7 +46,7 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    @person = Lessee.new(params[:person])
+    @person = Lessee.new(params[:lessee])
 
     respond_to do |format|
       if @person.save
@@ -65,7 +65,7 @@ class PeopleController < ApplicationController
     @person = Lessee.find(params[:id])
 
     respond_to do |format|
-      if @person.update_attributes(params[:person])
+      if @person.update_attributes(params[:lessee])
         format.html { redirect_to @person, notice: 'Person was successfully updated.' }
         format.json { head :no_content }
       else
@@ -82,7 +82,7 @@ class PeopleController < ApplicationController
     @person.destroy
 
     respond_to do |format|
-      format.html { redirect_to people_url }
+      format.html { redirect_to lessees_url }
       format.json { head :no_content }
     end
   end

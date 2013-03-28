@@ -65,7 +65,7 @@ class OwnersController < ApplicationController
     @person = Owner.find(params[:id])
 
     respond_to do |format|
-      if @person.update_attributes(params[:person])
+      if @person.update_attributes(params[:owner])
         format.html { redirect_to @person, notice: 'Person was successfully updated.' }
         format.json { head :no_content }
       else
@@ -82,7 +82,7 @@ class OwnersController < ApplicationController
     @person.destroy
 
     respond_to do |format|
-      format.html { redirect_to people_url }
+      format.html { redirect_to owners_url }
       format.json { head :no_content }
     end
   end
