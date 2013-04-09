@@ -1,7 +1,18 @@
 Lacasona::Application.routes.draw do
+  resources :invoice_statuses
+
+
+  resources :consecutives
+
+
+  resources :document_types
+
+
   get "transaction/month_end"
 
   get "transaction/billing"
+  
+  get "transaction/index"
 
   resources :payments
 
