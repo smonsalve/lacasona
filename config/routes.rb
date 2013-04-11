@@ -1,4 +1,6 @@
 Lacasona::Application.routes.draw do
+  devise_for :users
+
   get "transaction/month_end"
 
   get "transaction/billing"
