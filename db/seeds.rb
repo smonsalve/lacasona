@@ -10,6 +10,9 @@ DocumentType.delete_all
 docT1 = DocumentType.create(name: 'INVOICE')
 docT2 = DocumentType.create(name: 'PAYMENT')
 
+PaymentStatus.delete_all
+PaymentStatus.create(description: 'Anulado', code_status: 'CANCELED')
+PaymentStatus.create(description: 'Aplicado', code_status: 'APPLIED')
 InvoiceStatus.delete_all
 InvoiceStatus.create(description: 'Cancelada', code_status: 'CANCELED')
 InvoiceStatus.create(description: 'Pendiente de pago', code_status: 'PAYMENT_PENDING')
