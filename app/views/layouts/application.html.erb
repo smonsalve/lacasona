@@ -37,6 +37,13 @@
 			<%= link_to_unless_current "Contratos", contracts_path%>
 			<%= link_to_unless_current "Regimen contributivo", tax_regimes_path%>
 			<%= link_to_unless_current "Naturaleza legal", legal_natures_path%>
+			<%= link_to_unless_current "Procesos", transaction_index_path%>
+			<%= link_to_unless_current "Facturas", invoices_path%>
+			<%= link_to_unless_current "Pagos", payments_path%>
+			<%= link_to_unless_current "Estado de pagos", payment_statuses_path%>
+			<%= link_to_unless_current "Hacer pagos", do_payments_index_path%>
+			
+			
 			<% Page.where(:visible => true).each do |page|%>
 				<%= link_to_unless_current page.name, page_path(page.permalink)%>
 			<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407174828) do
+ActiveRecord::Schema.define(:version => 20130410202002) do
 
   create_table "balance_movements", :force => true do |t|
     t.decimal  "value"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20130407174828) do
     t.date     "movement_date"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "consecutives", :force => true do |t|
+    t.integer  "serie"
+    t.integer  "consecutive_type_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "contracts", :force => true do |t|
@@ -34,12 +41,26 @@ ActiveRecord::Schema.define(:version => 20130407174828) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.boolean  "active"
+    t.decimal  "interest_rate"
+  end
+
+  create_table "document_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "facilities", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "invoice_statuses", :force => true do |t|
+    t.string   "description"
+    t.string   "code_status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "invoices", :force => true do |t|
@@ -53,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20130407174828) do
     t.integer  "invoice_status_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.decimal  "value_paid"
+    t.decimal  "interest_paid"
   end
 
   create_table "legal_natures", :force => true do |t|
@@ -72,10 +95,17 @@ ActiveRecord::Schema.define(:version => 20130407174828) do
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
+  create_table "payment_statuses", :force => true do |t|
+    t.string   "description"
+    t.string   "code_status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "payments", :force => true do |t|
     t.integer  "payment_number"
     t.decimal  "value"
-    t.date     "paymen_date"
+    t.date     "payment_date"
     t.integer  "invoice_id"
     t.integer  "payment_status_id"
     t.datetime "created_at",        :null => false

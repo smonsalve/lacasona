@@ -1,9 +1,23 @@
 Lacasona::Application.routes.draw do
-  devise_for :users
+  resources :payment_statuses
+
+
+  get "do_payments/index"
+
+  resources :invoice_statuses
+
+
+  resources :consecutives
+
+
+  resources :document_types
+
 
   get "transaction/month_end"
 
   get "transaction/billing"
+  
+  get "transaction/index"
 
   resources :payments
 
