@@ -1,5 +1,10 @@
 <h1>Hacer pagos</h1>
-
+<%= form_tag do_payments_index_path do%>
+<p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
 <table>
   <tr>
     <th>Invoice number</th>

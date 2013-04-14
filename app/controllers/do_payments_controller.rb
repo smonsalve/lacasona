@@ -1,5 +1,6 @@
 class DoPaymentsController < ApplicationController
   def index
+    # @projects = Project.search(params[:search])
     if params[:id_invoice]
       
     end
