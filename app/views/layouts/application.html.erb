@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>La casona</title>
@@ -34,6 +34,208 @@
 		</div>
 		<%= yield %>
 	</div>
+</body>
+</html> -->
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Airstream</title>
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+ <%= stylesheet_link_tag    "layout" %>
+ <%= stylesheet_link_tag    "prettyphoto"  %>
+ <%= stylesheet_link_tag    "application" %>
+ 
+<!-- <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+<link rel="stylesheet" type="text/css" href="css/prettyphoto.css"/> -->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="css/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+<![endif]-->
+
+  <%= javascript_include_tag "application" %>
+  <!-- <%= javascript_include_tag "lib/jquery-core" %>
+    <%= javascript_include_tag "lib/jquery-reveal" %>	  
+	<%= javascript_include_tag "lib/jquery-accordion" %>
+<%= javascript_include_tag "lib/jquery-prettyphoto" %>
+<%= javascript_include_tag "lib/jquery-form" %>
+<%= javascript_include_tag "lib/jquery-enquire" %> -->
+<!-- <script type="text/javascript" src="lib/jquery-core.js"></script>
+<script type="text/javascript" src="lib/jquery-reveal.js"></script>
+<script type="text/javascript" src="lib/jquery-accordion.js"></script>
+<script type="text/javascript" src="lib/jquery-prettyphoto.js"></script>
+<script type="text/javascript" src="lib/jquery-form.js"></script>
+<script type="text/javascript" src="lib/jquery-enquire.js"></script> -->
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="container">
+  
+    <!-- Header -->
+    <div class="navigation">
+      <img src="images/logo.png" alt="Airstream" width="177" height="35" />
+      <h2 class="right"><span></span>1300 000 000</h2>
+    </div>
+    <!-- //End -->
+    
+    <!-- Splash -->
+    <div class="splash">
+      <div class="splash-content">
+		<%= link_to_unless_current "Home", home_path%>
+		<%= link_to_unless_current "Propiedades", properties_path%>
+		<%= link_to_unless_current "Personas", people_path%>
+		<%= link_to_unless_current "Propietario", owners_path%>
+		<%= link_to_unless_current "Arrendatarios", lessees_path%>
+		<%= link_to_unless_current "Tipos Propiedades", property_types_path%>
+		<%= link_to_unless_current "Comodidades", facilities_path%>
+		<%= link_to_unless_current "Contratos", contracts_path%>
+		<%= link_to_unless_current "Regimen contributivo", tax_regimes_path%>
+		<%= link_to_unless_current "Naturaleza legal", legal_natures_path%>
+		<%= link_to_unless_current "Procesos", transaction_index_path%>
+		<%= link_to_unless_current "Facturas", invoices_path%>
+		<%= link_to_unless_current "Pagos", payments_path%>
+		<%= link_to_unless_current "Estado de pagos", payment_statuses_path%>
+		<%= link_to_unless_current "Hacer pagos", do_payments_index_path%>
+		
+		
+		<% Page.where(:visible => true).each do |page|%>
+			<%= link_to_unless_current page.name, page_path(page.permalink)%>
+		<% end %>
+        <h1>More traffic to your website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitectetur adipis. In ultrices malesuada est eu laoreet. Nullam eget tellus ac lacus bibendum egestas et at libero. Vestibulum commodo magna ut suscipit.</p>
+        <span class="call-to-action-1"><a href="#">Download Now</a></span>
+        <span class="call-to-action-2"><a href="#" data-reveal-id="myModal" data-animation="fade">Enquire Now</a></span> 
+      </div>
+        <span class="screenshot-badge"><img src="images/screenshot-badge.png" width="64" height="64" alt="example" /></span> 
+        <span class="splash-screenshot"><img src="images/screenshot.png" width="435" height="274" class="screenshot" alt="example" /></span> 
+        <span class="clouds"></span> 
+    </div>
+    <!-- //End -->
+    
+    <!-- Feature -->
+    <div class="features">
+      <div class="feature-01"> <img src="images/feature-01.png" width="238" height="138" alt="example" />
+        <h2><span>1</span>Appraisal</h2>
+        <h3>Lorem ipsum dolor sit amet, consur adipiscing elit liquam.</h3>
+        <ul id="feature-01">
+          <li><a>Information gathering</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>Website Audit</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>E-Marketing Audit</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>SEO Consultancy</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula ula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+        </ul>
+      </div>
+      <div class="feature-02">
+        <img src="images/feature-02.png" width="238" height="138" alt="example" />
+        <h2><span>2</span>Planning</h2>
+        <h3>Lorem ipsum dolor sit amet, consur adipiscing elit liquam.</h3>
+        <ul id="feature-02">
+          <li><a>Establish goals and targets</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>Define Strategy</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>Copywriting</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>Content Provision</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula ula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+        </ul>
+      </div>
+      <div class="feature-03">
+        <img src="images/feature-03.png" width="238" height="138" alt="example" />
+        <h2><span>3</span>Implementation</h2>
+        <h3>Lorem ipsum dolor sit amet, consur adipiscing elit liquam.</h3>
+        <ul id="feature-03">
+          <li><a>SEO (Organic Search)</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>PPC (Paid Search)</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>Email Marketing</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+          <li><a>Social Media Marketing</a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus risus ut ligula ula auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.auctor in rhoncus ante ornare. Quisque ut nulla velit, nec rhoncus dolor.</p></li>
+        </ul>
+      </div>
+    </div>
+    <!-- //End -->
+    
+    <!-- Download -->
+    <div class="download">
+      <h2>Drive traffic to your website today</h2>
+      <span class="clear"></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis nisi et dolor imperdiet lectus.</p>
+      <span class="call-to-action-1"><a href="#">Download Now</a></span> 
+    </div>
+    <!-- //End -->
+    
+    <!-- Gallery -->
+    <div class="gallery">
+      <ul class="gallery-list">
+        <li><a href="images/gallery-enlarge.jpg" rel="gallery-set[1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="images/gallery-thumbnail-01.jpg" width="128" height="93" alt="example" /></a></li>
+        <li><a href="images/gallery-enlarge.jpg" rel="gallery-set[1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="images/gallery-thumbnail-02.jpg" width="128" height="93" alt="example" /></a></li>
+        <li><a href="images/gallery-enlarge.jpg" rel="gallery-set[1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="images/gallery-thumbnail-03.jpg" width="128" height="93" alt="example" /></a></li>
+        <li><a href="images/gallery-enlarge.jpg" rel="gallery-set[1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="images/gallery-thumbnail-04.jpg" width="128" height="93" alt="example" /></a></li>
+        <li><a href="images/gallery-enlarge.jpg" rel="gallery-set[1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="images/gallery-thumbnail-05.jpg" width="128" height="93" alt="example" /></a></li>
+        <li><a href="http://vimeo.com/8245346?width=680&amp;height=518" rel="gallery-set[1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="images/gallery-thumbnail-06.jpg" width="128" height="93" alt="example" /></a></li>
+      </ul>
+    </div>
+    <!-- //End -->
+    
+    <!-- Testimonials -->
+    <div class="testimonials">
+      <h2>See what others are saying</h2>
+      <span class="testimonials-top"></span>
+      <ul>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh quis augue vulputate tempor eu quis eros. Ut quis dolor nulla.</p><p class="testimonial-user">John Smith - Compare Loans</p></li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh quis augue vulputate tempor eu quis eros. Ut quis dolor nulla.</p><p class="testimonial-user">John Smith - Compare Loans</p></li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh quis augue vulputate tempor eu quis eros. Ut quis dolor nulla.</p><p class="testimonial-user">John Smith - Compare Loans</p></li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh quis augue vulputate tempor eu quis eros. Ut quis dolor nulla.</p><p class="testimonial-user">John Smith - Compare Loans</p></li>
+      </ul>
+      <span class="testimonials-bottom"></span>
+    </div>
+    <!-- //End -->
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="clear"></div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-content">
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas nec magna elit. Nullam venenatis nisl et sapien eleifend sed sollicitudin ipsum accumsan. Etiam sagittis gravida neque non porta.</p>
+    <div class="copyright">
+      <p class="left copyright-text">&copy; <%= Date.today.year%> La Casona. All rights reserved.</p>
+      <ul class="right">
+        <li><a href="#"><img src="images/icon-digg.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-facebook.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-flickr.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-linkedin.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-rss.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-skype.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-twitter.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-vimeo.png" width="16" height="16" alt="example" /></a></li>
+        <li><a href="#"><img src="images/icon-youtube.png" width="16" height="16" alt="example" /></a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- //End -->
+
+<!-- Enquire -->
+<div id="myModal" class="reveal-modal">
+  <h2>Enquire Now</h2>
+  <form action="process-enquire.php" method="post" id="form-enquire">
+    <input name="fullname" id="fullname" type="text" value="Full Name" onfocus="if (value =='Full Name') value=''" onblur="if (value=='') value='Full Name'" />
+    <input name="email" id="email" type="text" value="Email" onfocus="if (value =='Email') value=''" onblur="if (value=='') value='Email'" />
+    <input name="subject" id="subject" type="text" value="Subject Line" onfocus="if (value =='Subject Line') value=''" onblur="if (value=='') value='Subject Line'" class="subject" />
+    <textarea name="message" id="message" cols="10" rows="5"></textarea>
+    <span>All fields are mandatory</span>
+    <button type="submit">Send</button>
+  </form>
+</div>
+<!-- //End -->
+
+<script type="text/javascript" src="lib/jquery-config.js"></script>
 </body>
 </html>
 
