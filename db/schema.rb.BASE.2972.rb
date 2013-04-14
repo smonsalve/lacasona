@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410202002) do
+ActiveRecord::Schema.define(:version => 20130327015606) do
 
   create_table "balance_movements", :force => true do |t|
     t.decimal  "value"
@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(:version => 20130410202002) do
     t.date     "movement_date"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-  end
-
-  create_table "consecutives", :force => true do |t|
-    t.integer  "serie"
-    t.integer  "consecutive_type_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
   end
 
   create_table "contracts", :force => true do |t|
@@ -41,26 +34,12 @@ ActiveRecord::Schema.define(:version => 20130410202002) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.boolean  "active"
-    t.decimal  "interest_rate"
-  end
-
-  create_table "document_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "facilities", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "invoice_statuses", :force => true do |t|
-    t.string   "description"
-    t.string   "code_status"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "invoices", :force => true do |t|
@@ -74,8 +53,6 @@ ActiveRecord::Schema.define(:version => 20130410202002) do
     t.integer  "invoice_status_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.decimal  "value_paid"
-    t.decimal  "interest_paid"
   end
 
   create_table "legal_natures", :force => true do |t|
@@ -95,17 +72,10 @@ ActiveRecord::Schema.define(:version => 20130410202002) do
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
-  create_table "payment_statuses", :force => true do |t|
-    t.string   "description"
-    t.string   "code_status"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "payments", :force => true do |t|
     t.integer  "payment_number"
     t.decimal  "value"
-    t.date     "payment_date"
+    t.date     "paymen_date"
     t.integer  "invoice_id"
     t.integer  "payment_status_id"
     t.datetime "created_at",        :null => false
@@ -162,23 +132,5 @@ ActiveRecord::Schema.define(:version => 20130410202002) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
-
-  create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
