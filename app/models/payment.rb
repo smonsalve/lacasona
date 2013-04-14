@@ -7,7 +7,7 @@ class Payment < ActiveRecord::Base
     full_paid = true
     if @payment.value > 0
       
-      old_interest_paid = @invoice.interest_paid.nil? ? 0 @invoice.interest_paid
+      old_interest_paid = @invoice.interest_paid.nil? ? 0 : @invoice.interest_paid
       old_value_paid = @invoice.value_paid.nil? ? 0 : @invoice.value_paid
       
       interest_value = @invoice.interest_value.nil? ? 0 : @invoice.interest_value

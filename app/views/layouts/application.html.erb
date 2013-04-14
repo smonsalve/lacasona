@@ -100,7 +100,15 @@
     <!-- Header -->
     <div class="navigation">
       <img src="images/logo.png" alt="Airstream" width="177" height="35" />
-      <h2 class="right"><span></span>1300 000 000</h2>
+      <h2 class="right"><span></span>			<% if user_signed_in? %>
+				Logged in as <strong> <%= current_user.email %> </strong>.
+				<%= link_to 'Edit profile', edit_user_registration_path %> |
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+			<% else %>
+				<%= link_to 'Sing up', new_user_registration_path %> |
+				<%= link_to 'Login', new_user_session_path %> 
+				
+			<% end %></h2>
     </div>
     <!-- //End -->
     
