@@ -44,10 +44,23 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(params[:payment])
-
+ 
+    doc_type = DocumentType.find_by_name('PAYMENT').nil? ? DocumentType.create(:name =>'PAYMENT') : DocumentType.find_by_name('PAYMENT')
+    consecutive = Consecutive.find_by_consecutive_type_id(doc_type.id).nil? ? Consecutive.create(:serie => 0, :consecutive_type_id => doc_type.id ) : Consecutive.find_by_consecutive_type_id(doc_type.id)
+    
+    payment_number = consecutive.serie
+    until Payment.find_by_payment_number(payment_number).nil?
+      payment_number += 1 
+    end
+    
+    @payment.payment_number = payment_number
+   
     respond_to do |format|
       if @payment.save
-        Payment.do_payment()
+        consecutive.serie= payment_number +1
+        consecutive.save
+  
+        Payment.do_payment(@payment)
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render json: @payment, status: :created, location: @payment }
       else

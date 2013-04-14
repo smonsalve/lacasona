@@ -14,7 +14,9 @@
   <!-- <div class="field">
     <%= f.label :payment_number %><br />
     <%= f.number_field :payment_number %>
+	  
   </div> -->
+	 
   <div class="field">
     <%= f.label :value %><br />
     <%= f.text_field :value %>
@@ -27,10 +29,12 @@
     <%= f.label :invoice_id %><br />
     <%= f.number_field :invoice_id %>
   </div> -->
+	   <%= f.hidden_field :invoice_id %>
   <!-- <div class="field">
     <%= f.label :payment_status_id %><br />
     <%= f.number_field :payment_status_id %>
   </div> -->
+	   <%= f.hidden_field :payment_status_id %>
   <div class="actions">
     <%= f.submit %>
   </div>
