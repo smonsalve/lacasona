@@ -16,10 +16,5 @@
 //= require jquery_ujs
 //= require_tree .
 
-= require lib/jquery-core
-= require lib/jquery-reveal
-= require lib/jquery-accordion
-= require lib/jquery-prettyphoto
-= require lib/jquery-form
-= require lib/jquery-enquire
+
 
