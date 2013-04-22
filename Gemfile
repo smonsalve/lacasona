@@ -48,3 +48,6 @@ end
 
 
 gem 'devise'
+
+gem 'pdfkit'
+gem 'unicorn'

@@ -1,4 +1,7 @@
 Lacasona::Application.routes.draw do
+
+  devise_for :users
+  
   resources :payment_statuses
 
 
