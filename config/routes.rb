@@ -4,7 +4,9 @@ Lacasona::Application.routes.draw do
   
   resources :payment_statuses
 
-
+  
+  devise_for :users
+  
   get "do_payments/index"
 
   resources :invoice_statuses

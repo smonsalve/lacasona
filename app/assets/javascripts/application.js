@@ -15,10 +15,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
-= require jquery-core
-= require jquery-reveal
-= require jquery-accordion
-= require jquery-prettyphoto
-= require jquery-form
-= require jquery-enquire
+
+
 
