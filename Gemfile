@@ -46,8 +46,6 @@ group :development do
   gem 'meta_request'
 end
 
-
 gem 'devise'
-
-gem 'pdfkit'
 gem 'unicorn'
+gem 'pdfkit'
