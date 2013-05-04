@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>La casona</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+	
+	<div id="container">
+		
+		<div id="user_nav">
+			<% if user_signed_in? %>
+				Logged in as <strong> <%= current_user.email %> </strong>.
+				<%= link_to 'Edit profile', edit_user_registration_path %> |
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+			<% else %>
+				<%= link_to 'Sing up', new_user_registration_path %> |
+				<%= link_to 'Login', new_user_session_path %> 
+				
+			<% end %>	
+		</div>
+		
+		
+		<div id="nav">
+			<%= link_to_unless_current "Home", home_path%>
+			<%= link_to_unless_current "Propiedades", properties_path%>
+			<%= link_to_unless_current "Personas", people_path%>
+			<%= link_to_unless_current "Propietario", owners_path%>
+			<%= link_to_unless_current "Arrendatarios", lessees_path%>
+			<%= link_to_unless_current "Tipos Propiedades", property_types_path%>
+			<%= link_to_unless_current "Comodidades", facilities_path%>
+			<%= link_to_unless_current "Contratos", contracts_path%>
+			<%= link_to_unless_current "Regimen contributivo", tax_regimes_path%>
+			<%= link_to_unless_current "Naturaleza legal", legal_natures_path%>
+			<%= link_to_unless_current "Procesos", transaction_index_path%>
+			<%= link_to_unless_current "Facturas", invoices_path%>
+			<%= link_to_unless_current "Pagos", payments_path%>
+			<%= link_to_unless_current "Estado de pagos", payment_statuses_path%>
+			<%= link_to_unless_current "Hacer pagos", do_payments_index_path%>
+			
+			
+			<% Page.where(:visible => true).each do |page|%>
+				<%= link_to_unless_current page.name, page_path(page.permalink)%>
+			<% end %>
+			
+			
+		</div>
+		<%= yield %>
+	</div>
+</body>
+</html>
+
