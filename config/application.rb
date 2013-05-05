@@ -61,6 +61,7 @@ module Lacasona
     
     config.middleware.use PDFKit::Middleware, :print_media_type => true
     
+    config.assets.initialize_on_precompile = false
     
   end
 end
