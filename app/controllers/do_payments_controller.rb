@@ -5,7 +5,7 @@ class DoPaymentsController < ApplicationController
       
     end
     @invoices = Invoice.all
-    
+    invoices.to_s
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @invoices }
