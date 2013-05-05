@@ -44,7 +44,7 @@
   
     <!-- Header -->
     <div class="navigation">
-     
+      <img src="images/logo.png" alt="Airstream" width="177" height="35" />
       <h2 class="right"><span></span>			<% if user_signed_in? %>
 				Logged in as <strong> <%= current_user.email %> </strong>.
 				<%= link_to 'Edit profile', edit_user_registration_path %> |
@@ -60,21 +60,21 @@
     <!-- Splash -->
     <div class="splash">
       <div class="splash-content">
-		<%= link_to "Home", home_path%>
-		<%= link_to "Propiedades", properties_path%>
-		<%= link_to "Personas", people_path%>
-		<%= link_to "Propietario", owners_path%>
-		<%= link_to "Arrendatarios", lessees_path%>
-		<%= link_to "Tipos Propiedades", property_types_path%>
-		<%= link_to "Comodidades", facilities_path%>
-		<%= link_to "Contratos", contracts_path%>
-		<%= link_to "Regimen contributivo", tax_regimes_path%>
-		<%= link_to "Naturaleza legal", legal_natures_path%>
-		<%= link_to "Procesos", transaction_index_path%>
-		<%= link_to "Facturas", invoices_path%>
-		<%= link_to "Pagos", payments_path%>
-		<%= link_to "Estado de pagos", payment_statuses_path%>
-		<%= link_to "Hacer pagos", do_payments_index_path %>
+	<li>	<%= link_to "Home", home_path %> </li> <li>
+		<%= link_to "Propiedades", properties_path %>  </li> <li>
+		<%= link_to "Personas", people_path %>  </li> <li>
+		<%= link_to "Propietario", owners_path %>  </li> <li>
+		<%= link_to "Arrendatarios", lessees_path %>  </li> <li>
+		<%= link_to "Tipos Propiedades", property_types_path %>  </li> <li>
+		<%= link_to "Comodidades", facilities_path %>  </li> <li>
+		<%= link_to "Contratos", contracts_path %>  </li> <li>
+		<%= link_to "Regimen contributivo", tax_regimes_path %>  </li> <li>
+		<%= link_to "Naturaleza legal", legal_natures_path %>  </li> <li>
+		<%= link_to "Procesos", transaction_index_path %>  </li> <li>
+		<%= link_to "Facturas", invoices_path %>  </li> <li>
+		<%= link_to "Pagos", payments_path %>  </li> <li>
+		<%= link_to "Estado de pagos", payment_statuses_path %>  </li> <li>
+		<%= link_to "Hacer pagos", do_payments_index_path %>  </li> <li>
 		
 		
 		<% Page.where(:visible => true).each do |page|%>
@@ -117,15 +117,7 @@
     <div class="copyright">
       <p class="left copyright-text">&copy; <%= Date.today.year%> La Casona. All rights reserved.</p>
       <ul class="right">
-        <li><a href="#"><img src="images/icon-digg.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-facebook.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-flickr.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-linkedin.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-rss.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-skype.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-twitter.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-vimeo.png" width="16" height="16" alt="example" /></a></li>
-        <li><a href="#"><img src="images/icon-youtube.png" width="16" height="16" alt="example" /></a></li>
+
       </ul>
     </div>
     <div class="clear"></div>

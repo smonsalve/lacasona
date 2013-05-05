@@ -3,7 +3,7 @@ class BalanceMovementsController < ApplicationController
   # GET /balance_movements.json
   def index
     @balance_movements = BalanceMovement.all
-
+    s
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @balance_movements }
