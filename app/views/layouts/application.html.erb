@@ -1,54 +1,133 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
 <html>
 <head>
-  <title>La casona</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>La Casona</title>
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+ <%= stylesheet_link_tag    "layout" %>
+ <%= stylesheet_link_tag    "prettyphoto"  %>
+ <%= stylesheet_link_tag    "application" %>
+ 
+<!-- <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+<link rel="stylesheet" type="text/css" href="css/prettyphoto.css"/> -->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="css/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+<![endif]-->
+
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <!-- <%= javascript_include_tag "lib/jquery-core" %>
+    <%= javascript_include_tag "lib/jquery-reveal" %>	  
+	<%= javascript_include_tag "lib/jquery-accordion" %>
+<%= javascript_include_tag "lib/jquery-prettyphoto" %>
+<%= javascript_include_tag "lib/jquery-form" %>
+	  <%= javascript_include_tag "lib/jquery-config" %>
+	  
+<%= javascript_include_tag "lib/jquery-enquire" %> -->
+<!-- <script type="text/javascript" src="lib/jquery-core.js"></script>
+<script type="text/javascript" src="lib/jquery-reveal.js"></script>
+<script type="text/javascript" src="lib/jquery-accordion.js"></script>
+<script type="text/javascript" src="lib/jquery-prettyphoto.js"></script>
+<script type="text/javascript" src="lib/jquery-form.js"></script>
+<script type="text/javascript" src="lib/jquery-enquire.js"></script> -->
 </head>
+
 <body>
-	
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-	
-	<div id="container">
-		
-		<div id="user_nav">
-			<% if user_signed_in? %>
+<div id="wrapper">
+  <div id="container">
+  
+    <!-- Header -->
+    <div class="navigation">
+      <img src="images/logo.png" alt="Airstream" width="177" height="35" />
+      <h2 class="right"><span></span>			<% if user_signed_in? %>
 				Logged in as <strong> <%= current_user.email %> </strong>.
 				<%= link_to 'Edit profile', edit_user_registration_path %> |
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			<% else %>
 				<%= link_to 'Sing up', new_user_registration_path %> |
-				<%= link_to 'Login', new_user_session_path %> 		
-			<% end %>	
-		</div>	
+				<%= link_to 'Login', new_user_session_path %> 
+				
+			<% end %></h2>
+    </div>
+    <!-- //End -->
+    
+    <!-- Splash -->
+    <div class="splash">
+      <div class="splash-content">
+	<li>	<%= link_to "Home", home_path %> </li> <li>
+		<%= link_to "Propiedades", properties_path %>  </li> <li>
+		<%= link_to "Personas", people_path %>  </li> <li>
+		<%= link_to "Propietario", owners_path %>  </li> <li>
+		<%= link_to "Arrendatarios", lessees_path %>  </li> <li>
+		<%= link_to "Tipos Propiedades", property_types_path %>  </li> <li>
+		<%= link_to "Comodidades", facilities_path %>  </li> <li>
+		<%= link_to "Contratos", contracts_path %>  </li> <li>
+		<%= link_to "Regimen contributivo", tax_regimes_path %>  </li> <li>
+		<%= link_to "Naturaleza legal", legal_natures_path %>  </li> <li>
+		<%= link_to "Procesos", transaction_index_path %>  </li> <li>
+		<%= link_to "Facturas", invoices_path %>  </li> <li>
+		<%= link_to "Pagos", payments_path %>  </li> <li>
+		<%= link_to "Estado de pagos", payment_statuses_path %>  </li> <li>
+		<%= link_to "Hacer pagos", do_payments_index_path %>  </li> <li>
 		
-		<div id="nav">
-			<%= link_to_unless_current "Home", home_path%>
-			<%= link_to_unless_current "Propiedades", properties_path%>
-			<%= link_to_unless_current "Personas", people_path%>
-			<%= link_to_unless_current "Propietario", owners_path%>
-			<%= link_to_unless_current "Arrendatarios", lessees_path%>
-			<%= link_to_unless_current "Tipos Propiedades", property_types_path%>
-			<%= link_to_unless_current "Comodidades", facilities_path%>
-			<%= link_to_unless_current "Contratos", contracts_path%>
-			<%= link_to_unless_current "Regimen contributivo", tax_regimes_path%>
-			<%= link_to_unless_current "Naturaleza legal", legal_natures_path%>
-			<%= link_to_unless_current "Procesos", transaction_index_path%>
-			<%= link_to_unless_current "Facturas", invoices_path%>
-			<%= link_to_unless_current "Pagos", payments_path%>
-			<%= link_to_unless_current "Estado de pagos", payment_statuses_path%>
-			<%= link_to_unless_current "Hacer pagos", do_payments_index_path%>
-			
-			
-			<% Page.where(:visible => true).each do |page|%>
-				<%= link_to_unless_current page.name, page_path(page.permalink)%>
-			<% end %>	
-		</div>
-			
+		
+		<% Page.where(:visible => true).each do |page|%>
+			<%= link_to_unless_current page.name, page_path(page.permalink)%>
+		<% end %>
+      
+ 
+      </div>
+      
+        
+        <span class="clouds"></span> 
+    </div>
+    <!-- //End -->
+    
+    <!-- Feature -->
+    <div class="features">
 		<%= yield %>
-		
-	</div>
+    </div>
+    <!-- //End -->
+    
+    <!-- Download -->
+    <div class="download">
+
+    </div>
+    <!-- //End -->
+    
+
+    
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="clear"></div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-content">
+    <p>.</p>
+    <div class="copyright">
+      <p class="left copyright-text">&copy; <%= Date.today.year%> La Casona. All rights reserved.</p>
+      <ul class="right">
+		  
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- //End -->
+
+
+
+<!-- <script type="text/javascript" src="lib/jquery-config.js"></script> -->
 </body>
+
 </html>
