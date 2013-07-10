@@ -49,3 +49,4 @@ end
 gem 'devise'
 gem 'unicorn'
 gem 'pdfkit'
+gem 'airbrake'
