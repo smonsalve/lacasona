@@ -86,9 +86,10 @@ Lacasona::Application.configure do
      
      Lacasona::Application.config.middleware.use ExceptionNotification::Rack  ,
        :email => {
-         :email_prefix => "[Whatever] ",
-         :sender_address => %{"notifier" <josevasmon@gmail.com>},
-         :exception_recipients => %w{josevasmon@gmail.com}
+         :email_prefix => "[Upss.. Error :  ] ",
+         :sender_address => %{"La Casona Bug Report" <josevasmon@gmail.com>},
+         :exception_recipients => %w{josevasmon@gmail.com jous32@gmail.com smonsalve@gmail.com}
        }
+
   
 end
