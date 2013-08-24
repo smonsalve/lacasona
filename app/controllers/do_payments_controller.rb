@@ -4,6 +4,7 @@ class DoPaymentsController < ApplicationController
     if params[:id_invoice]
       
     end
+    s
     @invoices = Invoice.all
     invoices.to_s
     respond_to do |format|

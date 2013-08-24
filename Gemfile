@@ -49,3 +49,6 @@ end
 gem 'devise'
 gem 'unicorn'
 gem 'pdfkit'
+
+
+gem 'exception_notification'
