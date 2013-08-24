@@ -1,10 +1,10 @@
-<h1>Listing people</h1>
+<h1> <%= t ".title" %></h1>
 
 <table>
   <tr>
-    <th>Card id number</th>
-    <th>Name</th>
-    <th>Address</th>
+    <th><%= Person.human_attribute_name(:card_id_number) %> </th>
+    <th><%= Person.human_attribute_name(:name) %></th>
+    <th><%= Person.human_attribute_name(:address) %></th>
     <th>Email</th>
     <th>Phone</th>
     <th>Cellphone</th>
