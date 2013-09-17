@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410202002) do
+ActiveRecord::Schema.define(:version => 20130526183048) do
 
   create_table "balance_movements", :force => true do |t|
     t.decimal  "value"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(:version => 20130410202002) do
     t.date     "movement_date"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "business_document_types", :force => true do |t|
+    t.string   "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "consecutives", :force => true do |t|

@@ -6,10 +6,10 @@ class Property < ActiveRecord::Base
   belongs_to :owner
   
   def owner_name
-    person.try(:name)
+    owner.try(:name)
   end
   
   def owner_name=(name)
-    self.person = Owner.find_by_name(name) if name.present?
+    self.owner = Person.find_by_name(name) if name.present?
   end
 end

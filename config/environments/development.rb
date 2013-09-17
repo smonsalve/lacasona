@@ -61,7 +61,8 @@ Lacasona::Application.configure do
        :email => {
          :email_prefix => "[Upss.. Error :  ] ",
          :sender_address => %{"La Casona Bug Report" <josevasmon@gmail.com>},
-         :exception_recipients => %w{josevasmon@gmail.com jous32@gmail.com smonsalve@gmail.com}
+         :exception_recipients => %w{josevasmon@gmail.com},
+         :email_format => :html
        }
 
   

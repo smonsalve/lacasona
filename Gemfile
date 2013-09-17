@@ -54,3 +54,5 @@ gem 'exception_notification'
 
 gem 'airbrake'
 
+# Hide assets in logs :)
+gem 'quiet_assets', :group => :development

@@ -8,34 +8,16 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
  <%= stylesheet_link_tag    "layout" %>
- <%= stylesheet_link_tag    "prettyphoto"  %>
+
  <%= stylesheet_link_tag    "application" %>
  
-<!-- <link rel="stylesheet" type="text/css" href="css/layout.css"/>
-<link rel="stylesheet" type="text/css" href="css/prettyphoto.css"/> -->
+ <%= favicon_link_tag 'favicon.ico' %>
+ 
 
-<!--[if IE 7]>
-<link rel="stylesheet" type="text/css" href="css/ie7.css" />
-<![endif]-->
-<!--[if IE 8]>
-<link rel="stylesheet" type="text/css" href="css/ie8.css" />
-<![endif]-->
 
   <%= javascript_include_tag "application" %>
-  <!-- <%= javascript_include_tag "lib/jquery-core" %>
-    <%= javascript_include_tag "lib/jquery-reveal" %>	  
-	<%= javascript_include_tag "lib/jquery-accordion" %>
-<%= javascript_include_tag "lib/jquery-prettyphoto" %>
-<%= javascript_include_tag "lib/jquery-form" %>
-	  <%= javascript_include_tag "lib/jquery-config" %>
-	  
-<%= javascript_include_tag "lib/jquery-enquire" %> -->
-<!-- <script type="text/javascript" src="lib/jquery-core.js"></script>
-<script type="text/javascript" src="lib/jquery-reveal.js"></script>
-<script type="text/javascript" src="lib/jquery-accordion.js"></script>
-<script type="text/javascript" src="lib/jquery-prettyphoto.js"></script>
-<script type="text/javascript" src="lib/jquery-form.js"></script>
-<script type="text/javascript" src="lib/jquery-enquire.js"></script> -->
+
+
 </head>
 
 <body>
@@ -44,7 +26,7 @@
   
     <!-- Header -->
     <div class="navigation">
-      <img src="images/logo.png" alt="Airstream" width="177" height="35" />
+    <!--  <img src="images/logo.png" alt="Airstream" width="177" height="35" /> -->
       <h2 class="right"><span></span>			<% if user_signed_in? %>
 				Logged in as <strong> <%= current_user.email %> </strong>.
 				<%= link_to 'Edit profile', edit_user_registration_path %> |

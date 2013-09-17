@@ -164,7 +164,7 @@ html, body{
 	height:100%;
 	display:block;
 	text-decoration:none;
-	background-image:url(../images/button-blue.png);
+	background-image: image-url("button-blue.png");		
 	background-repeat:no-repeat;
 	background-position:0px 0px;
 	color:#ffffff;
@@ -172,7 +172,7 @@ html, body{
 }
 
 .call-to-action-2 a{
-	background-image:url(../images/button-green.png);
+	background-image: image-url("button-green.png");
 	text-shadow:0px 1px 0px #317661;
 }
 
@@ -192,7 +192,7 @@ html, body{
 	position:absolute;
 	top:41px;
 	left:335px;
-	background-image:url(../images/clouds.png);
+	background-image: image-url("clouds.png");
 	background-repeat:no-repeat;
 	background-position:top center;
 	z-index:4;
@@ -213,7 +213,7 @@ html, body{
 	position:relative;
 	float:left;
 	margin:-60px 0px 32px 0px;
-	background-image:url(../images/background-features.gif);
+	background-image: image-url("background-features.gif");
 	background-position:top center;
 	background-repeat:no-repeat;
 	z-index:5;
@@ -228,7 +228,7 @@ html, body{
 	height:31px;
 	position:relative;
 	float:left;
-	background-image:url(../images/badge.png);
+	background-image: image-url("badge.png");
 	background-repeat:no-repeat;
 	background-position:top center;
 	color:#895602;
@@ -273,7 +273,7 @@ html, body{
 	float:left;
 	line-height:30px;
 	border-bottom:1px solid #dedede;
-	background-image:url(../images/bullet.gif);
+	background-image: image-url("bullet.gif");
 	background-repeat:no-repeat;
 	background-position:3px 12px;
 	text-indent:16px;
@@ -296,7 +296,7 @@ a.selected{font-weight:bold;}
 	height:38px;
 	position:relative;
 	float:left;
-	background-image:url(../images/background-download.gif);
+	background-image: image-url("background-download.gif");
 	background-repeat:no-repeat;
 	background-position:top center;
 	margin:0px 0px 32px 0px;
@@ -337,7 +337,7 @@ a.selected{font-weight:bold;}
 	width:128px;
 	height:93px;
 	padding:6px;
-	background-image:url(../images/gallery-background.gif);
+	/*background-image:url(../images/gallery-background.gif);*/
 	margin:0px 20px 0px 0px;
 }
 
@@ -389,7 +389,7 @@ p.testimonial-user{
 	height:20px;
 	position:relative;
 	float:left;
-	background-image:url(../images/testimonial-background-top.gif);
+	/*background-image:url(../images/testimonial-background-top.gif);*/
 	background-repeat:no-repeat;
 	background-position:top center;
 	margin:22px 0px 0px 0px;
@@ -400,7 +400,7 @@ p.testimonial-user{
 	height:20px;
 	position:relative;
 	float:left;
-	background-image:url(../images/testimonial-background-bottom.gif);
+	/*background-image:url(../images/testimonial-background-bottom.gif);*/
 	background-repeat:no-repeat;
 	background-position:top center;
 	margin:0px 0px 32px 0px;
@@ -411,7 +411,7 @@ p.testimonial-user{
 	height:283px;
 	margin:0px auto;
 	margin-top:-106px;
-	background-image:url(../images/background-footer.gif);
+	/*background-image:url(../images/background-footer.gif);*/
 	background-repeat:repeat-x;
 	background-position:top center;
 }
@@ -509,7 +509,7 @@ Forms
 	height:30px;
 	position:relative;
 	float:right;
-	background-image:url(../images/button-green-send.png);
+	/*background-image:url(../images/button-green-send.png);*/
 	background-repeat:no-repeat;
 	background-position:0px 0px;
 	margin:-2px 21px 0px 0px;
@@ -549,7 +549,7 @@ Lightbox - Enquire
 	margin-left: -290px;
 	width:558px;
 	height:384px;
-	background-image:url(../images/lightbox-contact-background.png);
+	/*background-image:url(../images/lightbox-contact-background.png);*/
 	background-repeat:no-repeat;
 	background-position:top center;
 	position: absolute;
