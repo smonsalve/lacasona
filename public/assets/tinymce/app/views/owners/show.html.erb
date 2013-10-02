@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Card id number:</b>
+  <%= @person.card_id_number %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @person.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @person.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @person.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @person.phone %>
+</p>
+
+<p>
+  <b>Cellphone:</b>
+  <%= @person.cellphone %>
+</p>
+
+<p>
+  <b>Tax regime:</b>
+  <%= @person.tax_regime_id %>
+</p>
+
+<p>
+  <b>Legal nature:</b>
+  <%= @person.legal_nature_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_owner_path(@person) %> |
+<%= link_to 'Back', owner_path %>

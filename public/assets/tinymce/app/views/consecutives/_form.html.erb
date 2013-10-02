@@ -1,0 +1,25 @@
+<%= form_for(@consecutive) do |f| %>
+  <% if @consecutive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consecutive.errors.count, "error") %> prohibited this consecutive from being saved:</h2>
+
+      <ul>
+      <% @consecutive.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :serie %><br />
+    <%= f.number_field :serie %>
+  </div>
+  <div class="field">
+    <%= f.label :consecutive_type_id %><br />
+    <%= f.number_field :consecutive_type_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

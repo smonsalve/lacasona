@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Value:</b>
+  <%= @balance_movement.value %>
+</p>
+
+<p>
+  <b>Document:</b>
+  <%= @balance_movement.document_id %>
+</p>
+
+<p>
+  <b>Document type:</b>
+  <%= @balance_movement.document_type_id %>
+</p>
+
+<p>
+  <b>Movement date:</b>
+  <%= @balance_movement.movement_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_balance_movement_path(@balance_movement) %> |
+<%= link_to 'Back', balance_movements_path %>

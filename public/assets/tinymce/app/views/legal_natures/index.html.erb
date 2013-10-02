@@ -1,0 +1,23 @@
+<h1>Listing legal_natures</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @legal_natures.each do |legal_nature| %>
+  <tr>
+    <td><%= legal_nature.name %></td>
+    <td><%= link_to 'Show', legal_nature %></td>
+    <td><%= link_to 'Edit', edit_legal_nature_path(legal_nature) %></td>
+    <td><%= link_to 'Destroy', legal_nature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Legal nature', new_legal_nature_path %>

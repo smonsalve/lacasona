@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  payment_number: 1
+  value: 9.99
+  paymen_date: 2013-03-25
+  invoice_id: 1
+  payment_status_id: 1
+
+two:
+  payment_number: 1
+  value: 9.99
+  paymen_date: 2013-03-25
+  invoice_id: 1
+  payment_status_id: 1
