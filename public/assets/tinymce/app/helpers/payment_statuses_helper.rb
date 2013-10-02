@@ -1,2 +1,0 @@
-module PaymentStatusesHelper
-end
