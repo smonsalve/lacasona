@@ -1,4 +1,4 @@
-<h1>Listing invoice_statuses</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= invoice_status.description %></td>
     <td><%= invoice_status.code_status %></td>
-    <td><%= link_to 'Show', invoice_status %></td>
-    <td><%= link_to 'Edit', edit_invoice_status_path(invoice_status) %></td>
-    <td><%= link_to 'Destroy', invoice_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), invoice_status %></td>
+    <td><%= link_to t(".edit"), edit_invoice_status_path(invoice_status) %></td>
+    <td><%= link_to t(".destroy"), invoice_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Invoice status', new_invoice_status_path %>
+<%= link_to t(".new"), new_invoice_status_path %>

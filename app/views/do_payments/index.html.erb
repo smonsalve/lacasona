@@ -1,4 +1,4 @@
-<h1>Hacer pagos</h1>
+<h1><%= t ".title" %></h1>
 <%= form_tag do_payments_index_path do%>
 <p>
     <%= text_field_tag :search, params[:search] %>
@@ -37,9 +37,9 @@
 	<%= submit_tag "Pagar" %>
 	</td>
 	<% end %>
-    <!-- <td><%= link_to 'Show', invoice %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-   <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> 
+    <!-- <td><%= link_to t(".show"), invoice %></td>
+    <td><%= link_to t(".edit"), edit_invoice_path(invoice) %></td>
+   <td><%= link_to t(".destroy"), invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> 
   </tr>
 <% end %>
 </table>

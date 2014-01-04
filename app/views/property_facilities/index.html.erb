@@ -1,4 +1,4 @@
-<h1>Listing property_facilities</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -15,13 +15,13 @@
     <td><%= property_facility.property_id %></td>
     <td><%= property_facility.facilities_id %></td>
     <td><%= property_facility.quantity %></td>
-    <td><%= link_to 'Show', property_facility %></td>
-    <td><%= link_to 'Edit', edit_property_facility_path(property_facility) %></td>
-    <td><%= link_to 'Destroy', property_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), property_facility %></td>
+    <td><%= link_to t(".edit"), edit_property_facility_path(property_facility) %></td>
+    <td><%= link_to t(".destroy"), property_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Property facility', new_property_facility_path %>
+<%= link_to t(".new"), new_property_facility_path %>

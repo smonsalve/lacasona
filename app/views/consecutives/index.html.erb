@@ -1,4 +1,4 @@
-<h1>Listing consecutives</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= consecutive.serie %></td>
     <td><%= consecutive.consecutive_type_id %></td>
-    <td><%= link_to 'Show', consecutive %></td>
-    <td><%= link_to 'Edit', edit_consecutive_path(consecutive) %></td>
-    <td><%= link_to 'Destroy', consecutive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), consecutive %></td>
+    <td><%= link_to t(".edit"), edit_consecutive_path(consecutive) %></td>
+    <td><%= link_to t(".destroy"), consecutive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Consecutive', new_consecutive_path %>
+<%= link_to t(".new"), new_consecutive_path %>

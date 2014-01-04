@@ -1,4 +1,4 @@
-<h1>Listing tax_regimes</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= tax_regime.name %></td>
     <td><%= tax_regime.tax_percentage %></td>
-    <td><%= link_to 'Show', tax_regime %></td>
-    <td><%= link_to 'Edit', edit_tax_regime_path(tax_regime) %></td>
-    <td><%= link_to 'Destroy', tax_regime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), tax_regime %></td>
+    <td><%= link_to t(".edit"), edit_tax_regime_path(tax_regime) %></td>
+    <td><%= link_to t(".destroy"), tax_regime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tax regime', new_tax_regime_path %>
+<%= link_to t(".new"), new_tax_regime_path %>

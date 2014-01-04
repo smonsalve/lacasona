@@ -1,4 +1,4 @@
-<h1>Listing contracts</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -25,13 +25,13 @@
     <td><%= contract.final_date %></td>
     <td><%= contract.pay_day %></td>
     <td><%= contract.rate_commission %></td>
-    <td><%= link_to 'Show', contract %></td>
-    <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
-    <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), contract %></td>
+    <td><%= link_to t(".edit"), edit_contract_path(contract) %></td>
+    <td><%= link_to t(".destroy"), contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Contract', new_contract_path %>
+<%= link_to t(".new"), new_contract_path %>

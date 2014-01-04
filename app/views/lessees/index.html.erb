@@ -1,4 +1,4 @@
-<h1>Listing people</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -25,13 +25,13 @@
     <td><%= person.cellphone %></td>
     <td><%= person.tax_regime_id %></td>
     <td><%= person.legal_nature_id %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), person %></td>
+    <td><%= link_to t(".edit"), edit_person_path(person) %></td>
+    <td><%= link_to t(".destroy"), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Person', new_lessee_path %>
+<%= link_to t(".new"), new_lessee_path %>

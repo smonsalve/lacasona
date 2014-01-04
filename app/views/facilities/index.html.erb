@@ -1,4 +1,4 @@
-<h1>Listing facilities</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -11,13 +11,13 @@
 <% @facilities.each do |facility| %>
   <tr>
     <td><%= facility.name %></td>
-    <td><%= link_to 'Show', facility %></td>
-    <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
-    <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), facility %></td>
+    <td><%= link_to t(".edit"), edit_facility_path(facility) %></td>
+    <td><%= link_to t(".destroy"), facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Facility', new_facility_path %>
+<%= link_to t(".new"), new_facility_path %>

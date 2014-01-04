@@ -1,4 +1,4 @@
-<h1>Listing invoices</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -25,13 +25,13 @@
     <td><%= invoice.month %></td>
     <td><%= invoice.year %></td>
     <td><%= invoice.invoice_status_id %></td>
-    <td><%= link_to 'Show', invoice %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-    <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), invoice %></td>
+    <td><%= link_to t(".edit"), edit_invoice_path(invoice) %></td>
+    <td><%= link_to t(".destroy"), invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<%= link_to t(".new"), new_invoice_path %>

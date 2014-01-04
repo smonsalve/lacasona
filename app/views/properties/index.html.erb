@@ -1,4 +1,4 @@
-<h1>Listing properties</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
@@ -31,13 +31,13 @@
     <td><%= property.phone %></td>
     <td><%= property.appraisal %></td>
     <td><%= property.property_type_id %></td>
-    <td><%= link_to 'Show', property %></td>
-    <td><%= link_to 'Edit', edit_property_path(property) %></td>
-    <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".show"), property %></td>
+    <td><%= link_to t(".edit"), edit_property_path(property) %></td>
+    <td><%= link_to t(".destroy"), property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Property', new_property_path %>
+<%= link_to t(".new"), new_property_path %>

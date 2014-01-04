@@ -1,10 +1,147 @@
 es:		
+  balance_movements:
+    index:
+      title: "Listado de movimientos"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva "
+  business_document_types:
+    i       ndex:
+      title: "Listado de tipos de documento de negocio"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva "
+  consecutives:
+    index:
+      title: "Listado de consecutivos"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  contracts:
+    index:
+      title: "Listado de contratos"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  document_types:
+    index:
+      title: "Listado de tipos de documento"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  facilities:
+    index:
+      title: "Listado de comodidades"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  invoice_statuses:
+    index:
+      title: "Listado de estados de facturas"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  invoices:
+    index:
+      title: "Listado de facturas"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  legal_natures:
+    index:
+      title: "Listado de naturaleza legal"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  lessees:
+    index:
+      title: "Listado de arrendatarios"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  owners:
+    index:
+      title: "Listado de propietarios"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  pages:
+    index:
+      title: "Listado de paginas"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  payment_statuses:
+    index:
+      title: "Listado de estados de pago"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  payments:
+    index:
+      title: "Listado de pagos"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
   people:
     index:
       title: "Listado de personas"
-  activerecord:
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva "
+  properties:
+    index:
+      title: "Listado de propiedades"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  property_facilities:
+    index:
+      title: "Listado de comodidades de propiedad"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  property_types:
+    index:
+      title: "Listado de tipo propiedades"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva " 
+  tax_regimes:
+    index:
+      title: "Listado de tipo de impuesto"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      new: "Nueva" 
+ 
+
+  activerecord: 
     attributes:
       person:
         card_id_number: "Identificación"
         name: "Nombre"
         address: "Dirección"
+        email: "Email"
+        phone: "Telefono"
+        cellphone: "Celular"
+        tax_regime_id: "Regimen Impuesto"
+        legal_nature_id: "Naturaleza legal"
