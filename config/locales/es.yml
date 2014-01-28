@@ -1,4 +1,10 @@
-es:		
+es:	
+#commons	
+  attribute_commons: &commons
+    show: "Mostrar"
+    edit: "Editar"
+    destroy: "Eliminar"
+    new: "Nueva"
   balance_movements:
     index:
       title: "Listado de movimientos"
@@ -7,26 +13,17 @@ es:
       destroy: "Eliminar"
       new: "Nueva "
   business_document_types:
-    i       ndex:
+    index:
       title: "Listado de tipos de documento de negocio"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva "
+      <<: *commons
   consecutives:
     index:
       title: "Listado de consecutivos"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons
   contracts:
     index:
       title: "Listado de contratos"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons
   document_types:
     index:
       title: "Listado de tipos de documento"
@@ -37,10 +34,7 @@ es:
   facilities:
     index:
       title: "Listado de comodidades"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons
   invoice_statuses:
     index:
       title: "Listado de estados de facturas"
@@ -132,8 +126,7 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva" 
- 
-
+#end commons
   activerecord: 
     attributes:
       person:

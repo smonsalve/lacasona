@@ -9,6 +9,8 @@ gem 'rails', '3.2.11'
 gem "sqlite3", :group => :development
 
 
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -56,3 +58,25 @@ gem 'airbrake'
 
 # Hide assets in logs :)
 gem 'quiet_assets', :group => :development
+
+
+
+gem 'rails-i18n', '~> 3.0.0.pre'
+
+
+# twitter bootstrap css & javascript toolkit
+gem 'twitter-bootswatch-rails', '~> 3.0.2'
+
+# twitter bootstrap helpers gem, e.g., alerts etc...
+gem 'twitter-bootswatch-rails-helpers'
+
+gem "therubyracer"
+gem "less-rails"
+
+gem "jquery-ui-rails", "~> 4.1.0"
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+ gem 'therubyracer', platforms: :ruby
