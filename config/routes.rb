@@ -2,6 +2,9 @@ Lacasona::Application.routes.draw do
 
   devise_for :users
   
+  get "lessee/new_sex" => 'lessees#new_sex', :as => :new_sex
+  
+  
   resources :payment_statuses
 
   

@@ -1,12 +1,18 @@
 class LesseesController < ApplicationController
+  def new_sex
+    respond_to do |format|
+       format.html
+       format.js
+     end
+  end
   # GET /people
   # GET /people.json
   def index
     if params[:term]
-       @people = Lessee.order(:name).where("name like ?", "%#{params[:term]}%")
+       @lessees = Lessee.order(:name).where("name like ?", "%#{params[:term]}%")
        render json: @people.map(&:name)
     else
-      @people = Lessee.all
+      @lessees = Lessee.all
 
       respond_to do |format|
         format.html # index.html.erb
@@ -19,7 +25,7 @@ class LesseesController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    @person = Lessee.find(params[:id])
+    @lessee = Lessee.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,31 +36,31 @@ class LesseesController < ApplicationController
   # GET /people/new
   # GET /people/new.json
   def new
-    @person = Lessee.new
+    @lessee = Lessee.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @person }
+      format.json { render json: @lessee }
     end
   end
 
   # GET /people/1/edit
   def edit
-    @person = Lessee.find(params[:id])
+    @lessee = Lessee.find(params[:id])
   end
 
   # POST /people
   # POST /people.json
   def create
-    @person = Lessee.new(params[:lessee])
+    @lessee = Lessee.new(params[:lessee])
 
     respond_to do |format|
-      if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
-        format.json { render json: @person, status: :created, location: @person }
+      if @lessee.save
+        format.html { redirect_to @lessee, notice: 'Person was successfully created.' }
+        format.json { render json: @lessee, status: :created, location: @lessee }
       else
         format.html { render action: "new" }
-        format.json { render json: @person.errors, status: :unprocessable_entity }
+        format.json { render json: @lessee.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,12 +71,12 @@ class LesseesController < ApplicationController
     @person = Lessee.find(params[:id])
 
     respond_to do |format|
-      if @person.update_attributes(params[:lessee])
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
+      if @lessee.update_attributes(params[:lessee])
+        format.html { redirect_to @lessee, notice: 'Person was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @person.errors, status: :unprocessable_entity }
+        format.json { render json: @lessee.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,8 +84,8 @@ class LesseesController < ApplicationController
   # DELETE /people/1
   # DELETE /people/1.json
   def destroy
-    @person = Lessee.find(params[:id])
-    @person.destroy
+    @lessee = Lessee.find(params[:id])
+    @lessee.destroy
 
     respond_to do |format|
       format.html { redirect_to lessees_url }

@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  attr_accessible :address, :card_id_number, :cellphone, :email, :legal_nature_id, :name, :phone, :tax_regime_id
+  attr_accessible :address, :card_id_number, :cellphone, :email, :legal_nature_id, :name, :phone, :tax_regime_id, :type
   # belongs_to :tax_regime
   has_many :properties
   # def tax_regime_name

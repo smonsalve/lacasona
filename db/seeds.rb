@@ -43,7 +43,7 @@ PropertyType.create(name: 'Parcelacion')
 
 Facility.delete_all
 Facility.create(name: 'Habitacion')
-Facility.create(name: 'Banio')
+Facility.create(name: 'Bano')
 Facility.create(name: 'Balcon')
 Facility.create(name: 'Cocina')
 Facility.create(name: 'Sala')
@@ -60,13 +60,14 @@ tr1 = TaxRegime.create(name: "Comun", tax_percentage: 0.16)
 TaxRegime.create(name: "Simplificado", tax_percentage: 0.0)
 
 Person.delete_all
-p1 = Person.create(address: "Calle 1", card_id_number: "1039452505", cellphone: "3007840369", email: 'jous32@gmail.com', legal_nature_id: ln1.id, name: 'Propietario 1 ', phone: '2880421', tax_regime_id: tr1.id)
-p2 = Person.create(address: "Calle 2", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 2', phone: '2880421', tax_regime_id: tr1.id)
-p3 = Person.create(address: "Calle 3", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 3', phone: '2880421', tax_regime_id: tr1.id)
-p4 = Person.create(address: "Calle 4", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 4', phone: '2880421', tax_regime_id: tr1.id)
-p5 = Person.create(address: "Calle 5", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 5', phone: '2880421', tax_regime_id: tr1.id)
-p6 = Person.create(address: "Calle 6", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 6', phone: '2880421', tax_regime_id: tr1.id)
-
+p1 = Person.create(address: "Calle 1", card_id_number: "1039452505", cellphone: "3007840369", email: 'jous32@gmail.com', legal_nature_id: ln1.id, name: 'Propietario 1 ', phone: '2880421', tax_regime_id: tr1.id, type: 'Owner')
+p2 = Person.create(address: "Calle 2", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 2', phone: '2880421', tax_regime_id: tr1.id, type: 'Owner')
+p3 = Person.create(address: "Calle 3", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 3', phone: '2880421', tax_regime_id: tr1.id, type: 'Owner')
+p4 = Person.create(address: "Calle 4", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 4', phone: '2880421', tax_regime_id: tr1.id, type: 'Owner')
+p5 = Person.create(address: "Calle 5", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 5', phone: '2880421', tax_regime_id: tr1.id, type: 'Owner')
+p6 = Person.create(address: "Calle 6", card_id_number: "1039459487", cellphone: "3188762536", email: 'adrimavas@hotmail.com', legal_nature_id: ln1.id, name: 'Propietario 6', phone: '2880421', tax_regime_id: tr1.id, type: 'Owner')
+p7 = Person.create(address: "Calle 1", card_id_number: "1039452505", cellphone: "3007840369", email: 'jous32@gmail.com', legal_nature_id: ln1.id, name: 'Arrendatario 1 ', phone: '2880421', tax_regime_id: tr1.id, type: 'Lessee')
+p8 = Person.create(address: "Calle 1", card_id_number: "1039452505", cellphone: "3007840369", email: 'jous32@gmail.com', legal_nature_id: ln1.id, name: 'Arrendatario 2 ', phone: '2880421', tax_regime_id: tr1.id, type: 'Lessee')
 
 Property.delete_all
 prop1 = Property.create(address: 'Calle alquilada 1', appraisal: '100000', city: 'Sabaneta', code: 1, market_value: 150000000, neighborhood: 'Aves maria', owner_id: p1.id, phone: '2880421', property_type_id: pt1.id, rental_fee: 100000, stratum: 4)

@@ -1,37 +1,52 @@
-<h1><%= t ".title" %></h1>
-
-<table>
-  <tr>
-    <th>Card id number</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Cellphone</th>
-    <th>Tax regime</th>
-    <th>Legal nature</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @people.each do |person| %>
-  <tr>
-    <td><%= person.card_id_number %></td>
-    <td><%= person.name %></td>
-    <td><%= person.address %></td>
-    <td><%= person.email %></td>
-    <td><%= person.phone %></td>
-    <td><%= person.cellphone %></td>
-    <td><%= person.tax_regime_id %></td>
-    <td><%= person.legal_nature_id %></td>
-    <td><%= link_to t(".show"), person %></td>
-    <td><%= link_to t(".edit"), edit_person_path(person) %></td>
-    <td><%= link_to t(".destroy"), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Lessee -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:card_id_number) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:cellphone) %></th>
+      <th><%= model_class.human_attribute_name(:tax_regime_id) %></th>
+      <th><%= model_class.human_attribute_name(:legal_nature_id) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lessees.each do |lessee| %>
+      <tr>
+        <td><%= link_to lessee.id, lessee_path(lessee) %></td>
+        <td><%= lessee.card_id_number %></td>
+        <td><%= lessee.name %></td>
+        <td><%= lessee.address %></td>
+        <td><%= lessee.email %></td>
+        <td><%= lessee.phone %></td>
+        <td><%= lessee.cellphone %></td>
+        <td><%= tax_regime_name_by_id(lessee.tax_regime_id) %></td>
+        <td><%= legal_nature_name_by_id(lessee.legal_nature_id) %></td>
+        <!-- <td><%= lessee.type %></td>
+        <td><%=l lessee.created_at %></td> -->
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_lessee_path(lessee), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      lessee_path(lessee),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to t(".new"), new_lessee_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_lessee_path,
+            :class => 'btn btn-primary' %>

@@ -5,6 +5,10 @@ es:
     edit: "Editar"
     destroy: "Eliminar"
     new: "Nueva"
+    actions: "Acciones"
+    back: "Atras"
+    confirm: "Esta seguro?"
+    cancel: "Cancelar"
   balance_movements:
     index:
       title: "Listado de movimientos"
@@ -12,6 +16,7 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva "
+     
   business_document_types:
     index:
       title: "Listado de tipos de documento de negocio"
@@ -63,6 +68,16 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva " 
+      <<: *commons
+    new:
+      title: "Nuevo Arrendatario"
+      <<: *commons
+    show:
+      title: "Arrendatario"
+      <<: *commons
+    edit:
+      title : "Editar"
+      <<: *commons
   owners:
     index:
       title: "Listado de propietarios"
@@ -98,6 +113,7 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva "
+      <<: *commons
   properties:
     index:
       title: "Listado de propiedades"
