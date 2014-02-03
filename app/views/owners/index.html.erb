@@ -14,8 +14,8 @@
       <th><%= model_class.human_attribute_name(:cellphone) %></th>
       <th><%= model_class.human_attribute_name(:tax_regime_id) %></th>
       <th><%= model_class.human_attribute_name(:legal_nature_id) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th> -->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -29,10 +29,10 @@
         <td><%= owner.email %></td>
         <td><%= owner.phone %></td>
         <td><%= owner.cellphone %></td>
-        <td><%= owner.tax_regime_id %></td>
-        <td><%= owner.legal_nature_id %></td>
-        <td><%= owner.type %></td>
-        <td><%=l owner.created_at %></td>
+        <td><%= tax_regime_name_by_id owner.tax_regime_id %></td>
+        <td><%= legal_nature_name_by_id owner.legal_nature_id %></td>
+        <!-- <td><%= owner.type %></td>
+        <td><%=l owner.created_at %></td> -->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_owner_path(owner), :class => 'btn btn-mini' %>

@@ -38,13 +38,13 @@
   <div class="control-group">
     <%= f.label :tax_regime_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :tax_regime_id, :class => 'number_field' %>
+      <%= f.collection_select :tax_regime_id, TaxRegime.order(:name),:id,:name,include_blank: false,:class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :legal_nature_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :legal_nature_id, :class => 'number_field' %>
+    <%= f.collection_select :legal_nature_id, LegalNature.order(:name) ,:id , :name, include_blank: false, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">

@@ -17,11 +17,11 @@
   <dt><strong><%= model_class.human_attribute_name(:cellphone) %>:</strong></dt>
   <dd><%= @owner.cellphone %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tax_regime_id) %>:</strong></dt>
-  <dd><%= @owner.tax_regime_id %></dd>
+  <dd><%= tax_regime_name_by_id @owner.tax_regime_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:legal_nature_id) %>:</strong></dt>
-  <dd><%= @owner.legal_nature_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
-  <dd><%= @owner.type %></dd>
+  <dd><%= legal_nature_name_by_id @owner.legal_nature_id %></dd>
+  <!-- <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
+  <dd><%= @owner.type %></dd> -->
 </dl>
 
 <div class="form-actions">

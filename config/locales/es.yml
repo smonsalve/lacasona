@@ -5,10 +5,13 @@ es:
     edit: "Editar"
     destroy: "Eliminar"
     new: "Nueva"
-    actions: "Acciones"
-    back: "Atras"
-    confirm: "Esta seguro?"
-    cancel: "Cancelar"
+    address: "Dirección"
+    phone: "Telefono"
+    property_id: "Propiedad"
+    owner_id: "Propietario"
+    lessee_id: "Arrendatario"
+    created_at: "Fecha creacion"
+
   balance_movements:
     index:
       title: "Listado de movimientos"
@@ -28,7 +31,12 @@ es:
   contracts:
     index:
       title: "Listado de contratos"
-      <<: *commons
+      <<: *commons 
+    new:
+      title: "Nuevo contrato"
+    edit:
+      title: "Editar contrato"
+      
   document_types:
     index:
       title: "Listado de tipos de documento"
@@ -85,6 +93,10 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva " 
+    new:
+      title: "Nuevo propietario"
+    show:
+      title: "Propietario"
   pages:
     index:
       title: "Listado de paginas"
@@ -121,6 +133,10 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva " 
+    show:
+      title: "Propiedad"
+    edit:
+      title : "Editar propiedad"
   property_facilities:
     index:
       title: "Listado de comodidades de propiedad"
@@ -154,3 +170,36 @@ es:
         cellphone: "Celular"
         tax_regime_id: "Regimen Impuesto"
         legal_nature_id: "Naturaleza legal"
+      property:
+        code: "Codigo"
+        
+        stratum : "Estrato"
+        market_value: "Valor mercantil"
+        rental_fee: "Valor arriendo"
+        <<: *commons
+        neighborhood: "Barrio"
+        city: "Ciudad"
+        appraisal: "Valorizacion"
+        property_type_id: "Tipo"
+      contract:
+        code: "Codigo"
+        <<: *commons
+        pay_day: "Dia de pago"
+        initial_date : "Fecha inicial"
+        final_date: "Fecha final"
+        rate_commission: "Porcentaje comision"
+        active: "Estado"
+        interest_rate: "Tasa interes"
+        
+        
+  helpers:
+    actions: "Acciones"
+    links:
+      cancel: "Cancelar"
+      back: "Atras"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirm: "Esta seguro ?"
+     
+      
+      
