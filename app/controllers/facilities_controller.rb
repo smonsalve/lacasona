@@ -44,8 +44,14 @@ class FacilitiesController < ApplicationController
 
     respond_to do |format|
       if @facility.save
-        format.html { redirect_to @facility, notice: 'Facility was successfully created.' }
-        format.json { render json: @facility, status: :created, location: @facility }
+        if params[:from] != nil
+          format.html { redirect_to params[:from], notice: 'Facility was successfully created.' }
+          format.json { render json: @facility, status: :created, location: @facility }
+        else
+          format.html { redirect_to @facility, notice: 'Facility was successfully created.' }
+          format.json { render json: @facility, status: :created, location: @facility }
+        end
+
       else
         format.html { render action: "new" }
         format.json { render json: @facility.errors, status: :unprocessable_entity }
