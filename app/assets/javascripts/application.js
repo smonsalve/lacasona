@@ -10,10 +10,6 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
 //= require jquery.ui.all
-//= require jquery_ujs
-//= require cerulean/loader
-//= require cerulean/bootswatch
 //= require turbolinks
-//= require_tree .
+
