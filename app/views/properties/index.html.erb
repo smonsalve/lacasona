@@ -1,43 +1,92 @@
-<h1><%= t ".title" %></h1>
+<%- model_class = Property -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:owner_id) %></th>
+      <th><%= model_class.human_attribute_name(:stratum) %></th>
+      <th><%= model_class.human_attribute_name(:market_value) %></th>
+      <th><%= model_class.human_attribute_name(:rental_fee) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:neighborhood) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:appraisal) %></th>
+      <th><%= model_class.human_attribute_name(:property_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= link_to property.id, property_path(property) %></td>
+        <td><%= property.code %></td>
+        <td><%= person_name_by_id property.owner_id %></td>
+        <td><%= property.stratum %></td>
+        <td><%= property.market_value %></td>
+        <td><%= property.rental_fee %></td>
+        <td><%= property.address %></td>
+        <td><%= property.neighborhood %></td>
+        <td><%= property.city %></td>
+        <td><%= property.phone %></td>
+        <td><%= property.appraisal %></td>
+        <td><%= property_type_name_by_id property.property_type_id %></td>
+        <td><%=l property.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_property_path(property), :class => 'btn btn-mini' %>
+          <!-- <%= link_to t('.show', :default => t("helpers.links.show")),
+                                property_path(property), :class => 'btn btn-mini' %> -->
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      property_path(property),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+                      
+       
+                      
+                      <a id="aa" type="button" class="btn" style="width:100%;" href="#test_modal_<%= property.id %>" data-toggle="modal">Add Image</a>
+   
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Owner</th>
-    <th>Stratum</th>
-    <th>Market value</th>
-    <th>Rental fee</th>
-    <th>Address</th>
-    <th>Neighborhood</th>
-    <th>City</th>
-    <th>Phone</th>
-    <th>Appraisal</th>
-    <th>Property type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @properties.each do |property| %>
-  <tr>
-    <td><%= property.code %></td>
-    <td><%= property.owner_id %></td>
-    <td><%= property.stratum %></td>
-    <td><%= property.market_value %></td>
-    <td><%= property.rental_fee %></td>
-    <td><%= property.address %></td>
-    <td><%= property.neighborhood %></td>
-    <td><%= property.city %></td>
-    <td><%= property.phone %></td>
-    <td><%= property.appraisal %></td>
-    <td><%= property.property_type_id %></td>
-    <td><%= link_to t(".show"), property %></td>
-    <td><%= link_to t(".edit"), edit_property_path(property) %></td>
-    <td><%= link_to t(".destroy"), property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+     
+                          <div class="modal fade" id="test_modal_<%= property.id %>" >
+                            <div class="modal-dialog" id="test_modal_dialog">
+                              <div class="modal-content">
+                            <div class="modal-header" >
+                              <a class="close" data-dismiss="modal">&times;</a>
+                              <h3>Modal Header</h3>
+                            </div>
+                            <div class="modal-body">
+                              <p>Test Modal</p>
+                             
+                              <% @p_id = property.id %>
+                              <%= render "modal"%>
+                    
+              
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#" class="btn" data-dismiss="modal">Close</a>
+                              <a href="#" class="btn btn-primary">Save Changes</a>
+                            </div>
+        
+                          </div>
+                        </div>
+                          </div>
+        </td>
+      </tr>
+    <% end %>
+    
+    <%= hidden_field_tag :property_size, @properties.size %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to t(".new"), new_property_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_property_path,
+            :class => 'btn btn-primary' %>
+            
+                

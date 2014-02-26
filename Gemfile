@@ -56,3 +56,18 @@ gem 'airbrake'
 
 # Hide assets in logs :)
 gem 'quiet_assets', :group => :development
+
+
+
+# twitter bootstrap css & javascript toolkit
+gem 'twitter-bootswatch-rails', '~> 3.1.0'
+
+# twitter bootstrap helpers gem, e.g., alerts etc...
+gem 'twitter-bootswatch-rails-helpers'
+
+
+gem "therubyracer", "~> 0.12.1"
+
+
+
+# gem 'jquery-ui-rails'

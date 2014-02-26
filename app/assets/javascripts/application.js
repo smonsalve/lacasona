@@ -12,9 +12,16 @@
 //
 //= require jquery
 //= require tinymce
-//= require jquery-ui
+// require jquery-ui
 //= require jquery_ujs
-//= require_tree .
+// = require_tree .
+
+$(document).ready(function() {
+  $('#aa').click(function(event){
+    alert('Hooray!');
+    event.preventDefault(); // Prevent link from following its href
+  });
+});
 
 
 

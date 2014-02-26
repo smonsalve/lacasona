@@ -1,4 +1,24 @@
-es:		
+es:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    am: "%d.%m.%Y %I:%M %p"
+    formats:
+      default: "%d.%m.%Y %I:%M %p"	
+#commons	
+  attribute_commons: &commons
+    show: "Mostrar"
+    edit: "Editar"
+    destroy: "Eliminar"
+    new: "Nueva"
+    address: "Dirección"
+    phone: "Telefono"
+    property_id: "Propiedad"
+    owner_id: "Propietario"
+    lessee_id: "Arrendatario"
+    created_at: "Fecha creacion"
+
   balance_movements:
     index:
       title: "Listado de movimientos"
@@ -6,27 +26,24 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva "
+     
   business_document_types:
-    i       ndex:
+    index:
       title: "Listado de tipos de documento de negocio"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva "
+      <<: *commons
   consecutives:
     index:
       title: "Listado de consecutivos"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons
   contracts:
     index:
       title: "Listado de contratos"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons 
+    new:
+      title: "Nuevo contrato"
+    edit:
+      title: "Editar contrato"
+      
   document_types:
     index:
       title: "Listado de tipos de documento"
@@ -37,10 +54,7 @@ es:
   facilities:
     index:
       title: "Listado de comodidades"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons
   invoice_statuses:
     index:
       title: "Listado de estados de facturas"
@@ -69,6 +83,16 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva " 
+      <<: *commons
+    new:
+      title: "Nuevo Arrendatario"
+      <<: *commons
+    show:
+      title: "Arrendatario"
+      <<: *commons
+    edit:
+      title : "Editar"
+      <<: *commons
   owners:
     index:
       title: "Listado de propietarios"
@@ -76,6 +100,10 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva " 
+    new:
+      title: "Nuevo propietario"
+    show:
+      title: "Propietario"
   pages:
     index:
       title: "Listado de paginas"
@@ -104,6 +132,7 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva "
+      <<: *commons
   properties:
     index:
       title: "Listado de propiedades"
@@ -111,6 +140,10 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva " 
+    show:
+      title: "Propiedad"
+    edit:
+      title : "Editar propiedad"
   property_facilities:
     index:
       title: "Listado de comodidades de propiedad"
@@ -132,8 +165,7 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       new: "Nueva" 
- 
-
+#end commons
   activerecord: 
     attributes:
       person:
@@ -145,3 +177,35 @@ es:
         cellphone: "Celular"
         tax_regime_id: "Regimen Impuesto"
         legal_nature_id: "Naturaleza legal"
+      property:
+        code: "Codigo"
+        
+        stratum : "Estrato"
+        market_value: "Valor mercantil"
+        rental_fee: "Valor arriendo"
+        <<: *commons
+        neighborhood: "Barrio"
+        city: "Ciudad"
+        appraisal: "Valorizacion"
+        property_type_id: "Tipo"
+      contract:
+        code: "Codigo"
+        <<: *commons
+        pay_day: "Dia de pago"
+        initial_date : "Fecha inicial"
+        final_date: "Fecha final"
+        rate_commission: "Porcentaje comision"
+        active: "Estado"
+        interest_rate: "Tasa interes"
+        
+        
+  helpers:
+    actions: "Acciones"
+    links:
+      cancel: "Cancelar"
+      back: "Atras"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirm: "Esta seguro ?"
+     
+      

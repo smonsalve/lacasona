@@ -4,3 +4,11 @@
 #jQuery ->
 #	$('#property_owner_name').autocomplete
 #		source: $('#property_owner_name').data('autocomplete-source')
+# $(document).ready ->
+#   alert("ddd")
+#   $('#aa').click ->
+#     alert("ssdas")
+  # $('#aa').click(function(event){
+  # alert('Hooray!');
+  #   event.preventDefault(); // Prevent link from following its href
+  # });
