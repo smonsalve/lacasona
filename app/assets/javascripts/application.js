@@ -15,10 +15,13 @@
 // require jquery-ui
 //= require jquery_ujs
 // = require_tree .
-
+var bar = 0;
 $(document).ready(function() {
-  $('#aa').click(function(event){
-    alert('Hooray!');
+  $('.modalpro').click(function(event){
+    var $this = $(this);
+    var $tr = $this.closest('a');
+    bar = $tr.attr('value');
+    alert('Hooray!'+ $tr.attr('value') );
     event.preventDefault(); // Prevent link from following its href
   });
 });
