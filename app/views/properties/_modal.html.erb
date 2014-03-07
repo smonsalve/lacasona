@@ -1,9 +1,10 @@
 
-  <%= hidden_field_tag :h_property_id, @p_id %>
+<h2> proppp</h2>
+<div class="property_facilities" id="list_pro">
+  <%= render @list_pro %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_property_facility_path(:property_id => @p_id),
             :class => 'btn btn-primary',id:  "new_link_#{@p_id}", remote: true %>
-            <div id="incompleteTasks"></div>
-            
+        
             
             

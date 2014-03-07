@@ -42,6 +42,8 @@
                       edit_property_path(property), :class => 'btn btn-mini' %>
           <!-- <%= link_to t('.show', :default => t("helpers.links.show")),
                                 property_path(property), :class => 'btn btn-mini' %> -->
+            
+    
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       property_path(property),
                       :method => :delete,
@@ -50,7 +52,7 @@
                       
        
                       
-                      <a id="aa" type="button" class="btn modalpro" style="width:100%;" href="#test_modal_<%= property.id %>" data-toggle="modal" value="<%= property.id %>">Add Image</a>
+                      <a id="aa<%= property.id %>" type="button" class="btn modalpro" style="width:100%;" href="#test_modal_<%= property.id %>" data-toggle="modal" value="<%= property.id %>">Add Image</a>
    
 
      
@@ -81,7 +83,7 @@
       </tr>
     <% end %>
     
-    <%= hidden_field_tag :property_size, @properties.size %>
+ 
   </tbody>
 </table>
 

@@ -1,0 +1,6 @@
+<%= form_for property_facility do |f| %>
+
+  <%= f.label  property_facility.quantity %>
+  <%= f.label  property_description_by_id property_facility.property_id %>
+  <%= link_to "(remove)", property_facility, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+<% end %>

@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
-
+ @list_pro =  PropertyFacility.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @properties }
