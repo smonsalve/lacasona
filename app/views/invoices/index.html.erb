@@ -1,37 +1,54 @@
-<h1><%= t ".title" %></h1>
-
-<table>
-  <tr>
-    <th>Invoice number</th>
-    <th>Value</th>
-    <th>Interest value</th>
-    <th>Contract</th>
-    <th>Invoice date</th>
-    <th>Month</th>
-    <th>Year</th>
-    <th>Invoice status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @invoices.each do |invoice| %>
-  <tr>
-    <td><%= invoice.invoice_number %></td>
-    <td><%= invoice.value %></td>
-    <td><%= invoice.interest_value %></td>
-    <td><%= invoice.contract_id %></td>
-    <td><%= invoice.invoice_date %></td>
-    <td><%= invoice.month %></td>
-    <td><%= invoice.year %></td>
-    <td><%= invoice.invoice_status_id %></td>
-    <td><%= link_to t(".show"), invoice %></td>
-    <td><%= link_to t(".edit"), edit_invoice_path(invoice) %></td>
-    <td><%= link_to t(".destroy"), invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Invoice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_number) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      <th><%= model_class.human_attribute_name(:interest_value) %></th>
+      <th><%= model_class.human_attribute_name(:contract_id) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_date) %></th>
+      <th><%= model_class.human_attribute_name(:month) %></th>
+      <th><%= model_class.human_attribute_name(:year) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:value_paid) %></th>
+      <th><%= model_class.human_attribute_name(:interest_paid) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= link_to invoice.id, invoice_path(invoice) %></td>
+        <td><%= invoice.invoice_number %></td>
+        <td><%= invoice.value %></td>
+        <td><%= invoice.interest_value %></td>
+        <td><%= invoice.contract_id %></td>
+        <td><%= invoice.invoice_date %></td>
+        <td><%= invoice.month %></td>
+        <td><%= invoice.year %></td>
+        <td><%= invoice_status_description_by_id invoice.invoice_status_id %></td>
+        <td><%= invoice.value_paid %></td>
+        <td><%= invoice.interest_paid %></td>
+        <!-- <td><%=l invoice.created_at %></td> -->
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_invoice_path(invoice), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      invoice_path(invoice),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to t(".new"), new_invoice_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_invoice_path,
+            :class => 'btn btn-primary' %>

@@ -1,25 +1,38 @@
-<h1><%= t ".title" %></h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Tax percentage</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tax_regimes.each do |tax_regime| %>
-  <tr>
-    <td><%= tax_regime.name %></td>
-    <td><%= tax_regime.tax_percentage %></td>
-    <td><%= link_to t(".show"), tax_regime %></td>
-    <td><%= link_to t(".edit"), edit_tax_regime_path(tax_regime) %></td>
-    <td><%= link_to t(".destroy"), tax_regime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = TaxRegime -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:tax_percentage) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tax_regimes.each do |tax_regime| %>
+      <tr>
+        <td><%= link_to tax_regime.id, tax_regime_path(tax_regime) %></td>
+        <td><%= tax_regime.name %></td>
+        <td><%= tax_regime.tax_percentage %></td>
+        <!-- <td><%=l tax_regime.created_at %></td> -->
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_tax_regime_path(tax_regime), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      tax_regime_path(tax_regime),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to t(".new"), new_tax_regime_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_tax_regime_path,
+            :class => 'btn btn-primary' %>

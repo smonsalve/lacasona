@@ -1,23 +1,36 @@
-<h1><%= t ".title" %></h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @legal_natures.each do |legal_nature| %>
-  <tr>
-    <td><%= legal_nature.name %></td>
-    <td><%= link_to t(".show"), legal_nature %></td>
-    <td><%= link_to t(".edit"), edit_legal_nature_path(legal_nature) %></td>
-    <td><%= link_to t(".destroy"), legal_nature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = LegalNature -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @legal_natures.each do |legal_nature| %>
+      <tr>
+        <td><%= link_to legal_nature.id, legal_nature_path(legal_nature) %></td>
+        <td><%= legal_nature.name %></td>
+        <td><%=l legal_nature.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_legal_nature_path(legal_nature), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      legal_nature_path(legal_nature),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to t(".new"), new_legal_nature_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_legal_nature_path,
+            :class => 'btn btn-primary' %>

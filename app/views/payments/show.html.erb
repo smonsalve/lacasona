@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Payment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Payment number:</b>
-  <%= @payment.payment_number %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:payment_number) %>:</strong></dt>
+  <dd><%= @payment.payment_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>
+  <dd><%= @payment.value %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payment_date) %>:</strong></dt>
+  <dd><%= @payment.payment_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:invoice_id) %>:</strong></dt>
+  <dd><%= @payment.invoice_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payment_status_id) %>:</strong></dt>
+  <dd><%= @payment.payment_status_id %></dd>
+</dl>
 
-<p>
-  <b>Value:</b>
-  <%= @payment.value %>
-</p>
-
-<p>
-  <b>Paymen date:</b>
-  <%= @payment.payment_date %>
-</p>
-
-<p>
-  <b>Invoice:</b>
-  <%= @payment.invoice_id %>
-</p>
-
-<p>
-  <b>Payment status:</b>
-  <%= @payment.payment_status_id %>
-</p>
-
-
-<%= link_to t(".edit"), edit_payment_path(@payment) %> |
-<%= link_to t(".back"), payments_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              payments_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_payment_path(@payment), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              payment_path(@payment),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

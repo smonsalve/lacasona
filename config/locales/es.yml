@@ -2,10 +2,12 @@ es:
   date:
     formats:
       default: "%d.%m.%Y"
+    month_names: [Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio,Agosto, Septiembre, Octubre, Noviembre, Diciembre]	
   time:
     am: "%d.%m.%Y %I:%M %p"
+    pm: "%d.%m.%Y %I:%M %p"#deberia ser algo asi??
     formats:
-      default: "%d.%m.%Y %I:%M %p"	
+      default: "%d.%m.%Y %I:%M %p"
 #commons	
   attribute_commons: &commons
     show: "Mostrar"
@@ -65,10 +67,7 @@ es:
   invoices:
     index:
       title: "Listado de facturas"
-      show: "Mostrar"
-      edit: "Editar"
-      destroy: "Eliminar"
-      new: "Nueva " 
+      <<: *commons
   legal_natures:
     index:
       title: "Listado de naturaleza legal"

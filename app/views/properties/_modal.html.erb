@@ -1,6 +1,7 @@
 
 <h2> proppp</h2>
 <div class="property_facilities" id="list_pro">
+  <%@list_pro =  PropertyFacility.where(:property_id => @p_id) %>
   <%= render @list_pro %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_property_facility_path(:property_id => @p_id),

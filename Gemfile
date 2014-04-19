@@ -68,6 +68,6 @@ gem 'twitter-bootswatch-rails-helpers'
 
 gem "therubyracer", "~> 0.12.1"
 
-
+gem 'rails-i18n', '~> 3.0.0.pre'
 
 # gem 'jquery-ui-rails'

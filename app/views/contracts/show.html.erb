@@ -1,45 +1,39 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Contract -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Code:</b>
-  <%= @contract.code %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:code) %>:</strong></dt>
+  <dd><%= @contract.code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:property_id) %>:</strong></dt>
+  <dd><%= @contract.property_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:owner_id) %>:</strong></dt>
+  <dd><%= @contract.owner_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lessee_id) %>:</strong></dt>
+  <dd><%= @contract.lessee_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:initial_date) %>:</strong></dt>
+  <dd><%= @contract.initial_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:final_date) %>:</strong></dt>
+  <dd><%= @contract.final_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pay_day) %>:</strong></dt>
+  <dd><%= @contract.pay_day %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rate_commission) %>:</strong></dt>
+  <dd><%= @contract.rate_commission %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @contract.active %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:interest_rate) %>:</strong></dt>
+  <dd><%= @contract.interest_rate %></dd>
+</dl>
 
-<p>
-  <b>Property:</b>
-  <%= @contract.property_id %>
-</p>
-
-<p>
-  <b>Owner:</b>
-  <%= @contract.owner_id %>
-</p>
-
-<p>
-  <b>Lessee:</b>
-  <%= @contract.lessee_id %>
-</p>
-
-<p>
-  <b>Initial date:</b>
-  <%= @contract.initial_date %>
-</p>
-
-<p>
-  <b>Final date:</b>
-  <%= @contract.final_date %>
-</p>
-
-<p>
-  <b>Pay day:</b>
-  <%= @contract.pay_day %>
-</p>
-
-<p>
-  <b>Rate commission:</b>
-  <%= @contract.rate_commission %>
-</p>
-
-
-<%= link_to t(".edit"), edit_contract_path(@contract) %> |
-<%= link_to t(".back"), contracts_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              contracts_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_contract_path(@contract), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              contract_path(@contract),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,6 +1,6 @@
-<h1>Editing contract</h1>
-
-<%= render 'form' %>
-
-<%= link_to t(".show"), @contract %> |
-<%= link_to t(".back"), contracts_path %>
+<%- model_class = Contract -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                   :default => "Edit #{model_class.model_name.human}") %></h1>
+</div>
+<%= render :partial => 'form' %>

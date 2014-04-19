@@ -1,15 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = TaxRegime -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @tax_regime.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @tax_regime.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tax_percentage) %>:</strong></dt>
+  <dd><%= @tax_regime.tax_percentage %></dd>
+</dl>
 
-<p>
-  <b>Tax percentage:</b>
-  <%= @tax_regime.tax_percentage %>
-</p>
-
-
-<%= link_to t(".edit"), edit_tax_regime_path(@tax_regime) %> |
-<%= link_to t(".back"), tax_regimes_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tax_regimes_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tax_regime_path(@tax_regime), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              tax_regime_path(@tax_regime),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

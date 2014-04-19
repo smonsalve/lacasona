@@ -1,41 +1,38 @@
-<%= form_for(@payment) do |f| %>
-  <% if @payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
-      <ul>
-      <% @payment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @payment, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :payment_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :payment_number, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :value, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :payment_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :payment_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :invoice_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :invoice_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :payment_status_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :payment_status_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <!-- <div class="field">
-    <%= f.label :payment_number %><br />
-    <%= f.number_field :payment_number %>
-	  
-  </div> -->
-	 
-  <div class="field">
-    <%= f.label :value %><br />
-    <%= f.text_field :value %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_date %><br />
-    <%= f.date_select :payment_date %>
-  </div>
-  <!-- <div class="field">
-    <%= f.label :invoice_id %><br />
-    <%= f.number_field :invoice_id %>
-  </div> -->
-	   <%= f.hidden_field :invoice_id %>
-  <!-- <div class="field">
-    <%= f.label :payment_status_id %><br />
-    <%= f.number_field :payment_status_id %>
-  </div> -->
-	   <%= f.hidden_field :payment_status_id %>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                payments_path, :class => 'btn' %>
   </div>
 <% end %>
